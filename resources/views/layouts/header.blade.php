@@ -1,7 +1,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
 <header class="w-screen bg-primary">
-    <nav
-        class="container mx-auto w-full flex justify-between items-center h-full px-6 text-gray-600 z-40 py-3 relative">
+    <nav class="container mx-auto w-full flex justify-between items-center h-full px-6 text-gray-600 z-40 py-3 relative">
 
         <a class="text-2xl flex items-center justify-between font-bold font-salsa text-white" href="/">
             CHRIH <span class="ml-2 font-salsa text-sm">daba</span>
@@ -50,7 +49,8 @@
                 {{-- Menu --}}
                 <!-- Dropdown menu -->
                 <div id="dropdownBgHover" class="z-10 hidden w-48 bg-white rounded-lg shadow dark:bg-gray-700">
-                    <ul class="p-3 space-y-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownBgHoverButton">
+                    <ul class="p-3 space-y-1 text-sm text-gray-700 dark:text-gray-200"
+                        aria-labelledby="dropdownBgHoverButton">
                         <li class="profile-img">
                             <img class="profile-img">
                             <div class="mb-2 border-b profile-body">
@@ -88,15 +88,10 @@
                     </ul>
                 </div>
             @else
-                <div class="lg:flex">
-                    <div>
-                        <span class="hidden" id="util_data"></span>
-                        <a class=" py-1.5 px-3 m-1 text-center bg-gray-100  rounded-md text-black hover:bg-gray-100 lg:inline-block "
-                            href="/">
-                            Sign In
-                        </a>
-                    </div>
-                </div>
+            <button id="login-btn"
+                class=" py-1.5 px-3 m-1 text-center bg-gray-100  rounded-md text-black hover:bg-gray-100 lg:inline-block ">
+                Sign In
+            </button>
             @endauth
     </nav>
 
@@ -109,8 +104,7 @@
             class="fixed bg-white dark:bg-gray-600 top-0 left-0 bottom-0 flex flex-col w-5/6 max-w-sm py-6 px-6 border-r overflow-y-auto">
 
             <div class="flex items-center mb-8">
-                <a class="mr-auto text-2xl font-bold text-black text-violet-600 dark:text-gray-100"
-                    href="/">
+                <a class="mr-auto text-2xl font-bold text-black dark:text-gray-100" href="/">
                     TailwindFlex
                 </a>
 

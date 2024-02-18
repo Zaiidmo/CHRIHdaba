@@ -25,16 +25,16 @@
                                 class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-gray-900 border border-gray-800  rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
                                 Discover Our Store
                             </a>
-                            <a href="register" id="register"
-                                class="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-gray-800 dark:text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900">
-                                Get started
-                                <svg class="w-5 h-5 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd"
-                                        d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                                        clip-rule="evenodd"></path>
-                                </svg>
-                            </a>
+                                <button id="register-btn"
+                                    class="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-gray-800 dark:text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900">
+                                    Get started
+                                    <svg class="w-5 h-5 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd"
+                                            d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                                            clip-rule="evenodd"></path>
+                                    </svg>
+                                </button>
                         @endauth
                     </div>
                 </div>
@@ -257,6 +257,167 @@
             </div>
         </div>
     </section>
-    
+    {{-- Login Modal --}}
+    <section id="login-popup" class="hidden">
+        <div id="login-modal" tabindex="-1"
+            class="bg-black/50 overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 h-full items-center justify-center flex">
+            <div class="relative p-4 w-full max-w-md h-full md:h-auto">
 
+                <div class="relative bg-white rounded-lg shadow">
+                    <button id="login-popup-close" type="button"
+                        class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center popup-close"><svg
+                            aria-hidden="true" class="w-5 h-5" fill="#c6c7c7" viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                cliprule="evenodd"></path>
+                        </svg>
+                        <span class="sr-only">Close popup</span>
+                    </button>
+
+                    <div class="p-5">
+                        <h3 class="text-2xl mb-0.5 font-medium"></h3>
+                        <p class="mb-4 text-sm font-normal text-gray-800"></p>
+
+                        <div class="text-center">
+                            <p class="mb-3 text-2xl font-semibold leading-5 text-slate-900">
+                                Welcome Back
+                            </p>
+
+                        </div>
+
+                        <form class="w-full p-4">
+                            {{-- <label for="email" class="sr-only">Email address</label> --}}
+
+                            <div>
+                                <label for="email">Email address :</label>
+                                <input name="email" type="email" autocomplete="email" required=""
+                                    class="block w-full rounded-lg border border-gray-300 px-3 py-2 shadow-sm outline-none placeholder:text-gray-400 focus:ring-2 focus:ring-black focus:ring-offset-1"
+                                    placeholder="Email Address" value="">
+                            </div>
+
+                            <div>
+                                <label for="email">Password :</label>
+                                <input name="password" type="password" autocomplete="current-password" required=""
+                                    class="mt-2 block w-full rounded-lg border border-gray-300 px-3 py-2 shadow-sm outline-none placeholder:text-gray-400 focus:ring-2 focus:ring-black focus:ring-offset-1"
+                                    placeholder="Password" value="">
+                            </div>
+                            <p class="mb-3 mt-2 text-sm text-gray-500">
+                                <a href="/forgot-password" class="text-blue-800 hover:text-blue-600">Reset your
+                                    password?</a>
+                            </p>
+                            <button type="submit"
+                                class="inline-flex bg-blue-900 w-full items-center justify-center rounded-lg p-2 py-3 text-sm font-medium text-white outline-none">
+                                Continue
+                            </button>
+                        </form>
+
+                        <div class="flex w-full items-center gap-2 py-6 text-sm text-slate-600">
+                            <div class="h-px w-full bg-slate-200"></div>
+                            OR
+                            <div class="h-px w-full bg-slate-200"></div>
+                        </div>
+
+                        <div class="mt-4 flex flex-col gap-2">
+
+                            <button
+                                class="inline-flex h-10 w-full items-center justify-center gap-2 rounded border border-slate-300 bg-white p-2 text-sm font-medium text-black outline-none focus:ring-2 focus:ring-[#333] focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-60">
+                                <i class="fab fa-facebook"></i> <!-- Utilisation de l'icône Facebook de Font Awesome -->
+                                Continue with Facebook
+                            </button>
+
+                            <button
+                                class="inline-flex h-10 w-full items-center justify-center gap-2 rounded border border-slate-300 bg-white p-2 text-sm font-medium text-black outline-none focus:ring-2 focus:ring-[#333] focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-60">
+                                <i class="fab fa-google"></i> <!-- Utilisation de l'icône Google de Font Awesome -->
+                                Continue with Google
+                            </button>
+
+                        </div>
+                        <div class="mt-6 text-center text-sm text-slate-600">
+                            New Customer ?
+                            <a href="/signup" class="font-medium text-[#4285f4]">Sign up</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {{-- Register Modal --}}
+    <section id="register-popup" class="hidden">
+        <div id="register-popup" tabindex="-1"
+            class="bg-black/50 overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 h-full items-center justify-center flex">
+            <div class="relative p-4 w-full max-w-md h-full md:h-auto">
+
+                <div class="relative bg-white rounded-lg shadow">
+                    <button id="register-popup-close" type="button"
+                        class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center popup-close"><svg
+                            aria-hidden="true" class="w-5 h-5" fill="#c6c7c7" viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                cliprule="evenodd"></path>
+                        </svg>
+                        <span class="sr-only">Close popup</span>
+                    </button>
+
+                    <div class="p-5">
+                        <h3 class="text-2xl mb-0.5 font-medium"></h3>
+                        <p class="mb-4 text-sm font-normal text-gray-800"></p>
+
+                        <div class="text-center">
+                            <p class="mb-3 text-2xl font-semibold leading-5 text-slate-900">
+                                Get Started Now
+                            </p>
+
+                        </div>
+
+                        <form class="w-full p-4">
+                            {{-- <label for="email" class="sr-only">Email address</label> --}}
+
+                            <div>
+                                <label for="email">User Name :</label>
+                                <input name="password" type="password" autocomplete="current-password" required=""
+                                    class="mt-2 block w-full rounded-lg border border-gray-300 px-3 py-2 shadow-sm outline-none placeholder:text-gray-400 focus:ring-2 focus:ring-black focus:ring-offset-1"
+                                    placeholder="Password" value="">
+                            </div>
+
+                            <div>
+                                <label for="email">Email address :</label>
+                                <input name="email" type="email" autocomplete="email" required=""
+                                    class="block w-full rounded-lg border border-gray-300 px-3 py-2 shadow-sm outline-none placeholder:text-gray-400 focus:ring-2 focus:ring-black focus:ring-offset-1"
+                                    placeholder="Email Address" value="">
+                            </div>
+
+                            <div>
+                                <label for="email">Password :</label>
+                                <input name="password" type="password" autocomplete="current-password" required=""
+                                    class="mt-2 block w-full rounded-lg border border-gray-300 px-3 py-2 shadow-sm outline-none placeholder:text-gray-400 focus:ring-2 focus:ring-black focus:ring-offset-1"
+                                    placeholder="Password" value="">
+                            </div>
+
+
+                            <div>
+                                <label for="email">Confirm Password :</label>
+                                <input name="password" type="password" autocomplete="current-password" required=""
+                                    class="mt-2 block w-full rounded-lg border border-gray-300 px-3 py-2 shadow-sm outline-none placeholder:text-gray-400 focus:ring-2 focus:ring-black focus:ring-offset-1"
+                                    placeholder="Password" value="">
+                            </div>
+
+                            <div class="my-7">
+                                <button type="submit"
+                                    class="inline-flex bg-blue-900 w-full items-center justify-center rounded-lg p-2 py-3 text-sm font-medium text-white outline-none">
+                                    Continue
+
+                                </button>
+                            </div>
+
+                        </form>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
 @endsection
