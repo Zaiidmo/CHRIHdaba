@@ -7,7 +7,7 @@
     <div class="container px-5 py-14 mx-auto flex flex-wrap">
       <div class="lg:w-full mx-auto">
 
-        <div class="relative bg-gray-300 border-gray-300 py-10 mb-4 rounded-xl">
+        <div class="relative border-gray-300 py-10 mb-4 rounded-xl">
             <div class="absolute top-0 left-3"><img src="{{ asset('assets/images/Bubbles.png') }}" alt=""></div>
             <div class="absolute bottom-20 right-0"><img src="{{ asset('assets/images/Bubbles.png') }}" alt=""></div>
 

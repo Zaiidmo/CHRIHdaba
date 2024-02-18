@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 use TCG\Voyager\Facades\Voyager;
 
@@ -18,13 +19,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/product', function () {
-    return view('product.index');
-});
-
-Route::get('/product_informations', function () {
-    return view('product.show');
-});
+Route::resource('product', ProductController::class);
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();

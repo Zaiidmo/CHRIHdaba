@@ -1,5 +1,5 @@
-64<footer class="bg-primary mt-4">
-    <Msection class="bg-white w-screen  mt-8"> 
+<footer class="bg-primary mt-4">
+    <section class="bg-white w-screen  mt-8"> 
         <div class="grid w-screen gap-2 grid-cols-1 md:grid-cols-2 lg:grid-cols-4 max-w-screen-xl mx-auto mt-1 ">
             <div class="col-span-1 flex shadow-md p-8">
                 <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 32 32">
@@ -55,11 +55,6 @@
             </ul>
         </div>
         <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
-<<<<<<< HEAD
         <span class="block text-sm text-white sm:text-center dark:text-gray-400">© 2023 <a href="/" class="hover:underline">CHRIH daba</a>. All Rights Reserved.</span>
-=======
-        <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a
-                href="https://flowbite.com/" class="hover:underline">Flowbite™</a>. All Rights Reserved.</span>
->>>>>>> 0386e473f4341f450c42ed2dff703f0ac0bcf49e
     </div>
 </footer>
