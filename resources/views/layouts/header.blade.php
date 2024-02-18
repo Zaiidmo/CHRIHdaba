@@ -109,7 +109,7 @@
             class="fixed bg-white dark:bg-gray-600 top-0 left-0 bottom-0 flex flex-col w-5/6 max-w-sm py-6 px-6 border-r overflow-y-auto">
 
             <div class="flex items-center mb-8">
-                <a class="mr-auto text-2xl font-bold text-black text-violet-600 dark:text-gray-100"
+                <a class="mr-auto text-2xl font-bold text-black dark:text-gray-100"
                     href="/">
                     TailwindFlex
                 </a>

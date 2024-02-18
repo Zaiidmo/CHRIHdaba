@@ -1,4 +1,4 @@
-64<footer class="bg-primary mt-4">
+<footer class="bg-primary mt-4">
     <Msection class="bg-white w-screen  mt-8"> 
         <div class="grid w-screen gap-2 grid-cols-1 md:grid-cols-2 lg:grid-cols-4 max-w-screen-xl mx-auto mt-1 ">
             <div class="col-span-1 flex shadow-md p-8">

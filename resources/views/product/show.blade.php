@@ -11,7 +11,7 @@
             CHRIH daba > Products > Clothes > SHORT PRINTED DRESS
         </div>
         
-	  <div class="lg:w-4/5 mx-auto flex flex-wrap">
+	  <div class="lg:w-4/5 mx-auto flex">
 		<img alt="ecommerce" class="lg:w-1/2 w-full lg:h-auto h-64"  style="border-radius: 3rem;" src="{{ asset('assets/images/main clothe.png') }}">
 		<div class="lg:w-1/2 w-full lg:pl-10 lg:py-10 mt-6 lg:mt-0">
 		  
