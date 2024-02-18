@@ -88,10 +88,10 @@
                     </ul>
                 </div>
             @else
-                <div class="hidden lg:flex">
+                <div class="lg:flex">
                     <div>
                         <span class="hidden" id="util_data"></span>
-                        <a class=" py-1.5 px-3 m-1 text-center bg-gray-100  rounded-md text-black hover:bg-gray-100 hidden lg:inline-block "
+                        <a class=" py-1.5 px-3 m-1 text-center bg-gray-100  rounded-md text-black hover:bg-gray-100 lg:inline-block "
                             href="https://tailwindflex.com/login">
                             Sign In
                         </a>
