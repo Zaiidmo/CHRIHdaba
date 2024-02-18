@@ -257,10 +257,6 @@
             </div>
         </div>
     </section>
-    <section>
-        <div class="grid w-screen grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
-
-        </div>
-    </section>
+    
 
 @endsection
