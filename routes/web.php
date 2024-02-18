@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 use TCG\Voyager\Facades\Voyager;
@@ -28,3 +29,6 @@ Route::group(['prefix' => 'admin'], function () {
 Route::get('login', function(){
     return redirect()->route('voyager.login');
 })->name('login');
+
+// Login 
+Route::get('signin', [AuthController::class,'signin'])->name('signin');

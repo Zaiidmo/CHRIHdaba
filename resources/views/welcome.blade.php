@@ -286,10 +286,10 @@
 
                         </div>
 
-                        <form action="{{ route('voyager.login') }}" method="POST" class="w-full p-4">
+                        <form action="{{ route('signin') }}" method="get" class="w-full p-4">
                             {{-- <label for="email" class="sr-only">Email address</label> --}}
                             @csrf
-                            @method('POST')
+                            @method('get')
 
                             <div>
                                 <label for="email">Email address :</label>
