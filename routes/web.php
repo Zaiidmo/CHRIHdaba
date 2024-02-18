@@ -19,13 +19,17 @@ Route::get('/', function () {
 });
 
 Route::get('/product', function () {
-    return view('product');
+    return view('product.index');
 });
 
 Route::get('/product_informations', function () {
-    return view('singlePage');
+    return view('product.show');
 });
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
+
+Route::get('login', function(){
+    return redirect()->route('voyager.login');
+})->name('login');

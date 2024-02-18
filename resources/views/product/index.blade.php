@@ -12,8 +12,8 @@
             <div class="absolute bottom-20 right-0"><img src="{{ asset('assets/images/Bubbles.png') }}" alt=""></div>
 
             <div class="relative max-w-screen-md text-center mx-auto">
-                <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Designed for business teams like yours</h2>
-                <p class="text-gray-500 sm:text-xl dark:text-gray-400">Here at Flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</p>
+                <h2 class="mb-4 text-4xl tracking-tight font-bold text-gray-900">Style and Performance, Sports Apparel Section</h2>
+                <p class="text-gray-500 sm:text-xl dark:text-gray-400">A sports apparel section where comfort and performance converge in a perfect blend of style and functionality.</p>
             </div>
 
             <div class="flex flex-wrap justify-center items-center">
