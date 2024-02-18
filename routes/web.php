@@ -34,3 +34,5 @@ Route::get('login', function(){
 Route::get('signin', [AuthController::class,'signin'])->name('signin');
 // Register
 Route::post('/signup', [AuthController::class, 'signup'])->name('registration');
+// Logout
+Route::any('logout', [AuthController::class, 'getout'])->name('logout');

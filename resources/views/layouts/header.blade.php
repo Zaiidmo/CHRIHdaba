@@ -63,9 +63,9 @@
                         @if (is_array($nav_items) && !empty($nav_items))
                             @foreach ($nav_items as $name => $item)
                                 <li {!! isset($item['classes']) && !empty($item['classes']) ? 'class="' . $item['classes'] . '"' : '' !!}>
-                                    @if (isset($item['route']) && $item['route'] == 'voyager.logout')
-                                        <form action="{{ route('voyager.logout') }}" method="POST">
-                                            {{ csrf_field() }}
+                                    @if (isset($item['route']) && $item['route'] == 'logout')
+                                        <form action="{{ route('logout') }}" method="post">
+                                            @csrf
                                             <button type="submit" class="btn btn-danger btn-block">
                                                 @if (isset($item['icon_class']) && !empty($item['icon_class']))
                                                     <i class="{!! $item['icon_class'] !!}"></i>
