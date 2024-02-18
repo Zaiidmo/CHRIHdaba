@@ -18,6 +18,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/product', function () {
+    return view('product');
+});
+
+Route::get('/product_informations', function () {
+    return view('singlePage');
+});
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
