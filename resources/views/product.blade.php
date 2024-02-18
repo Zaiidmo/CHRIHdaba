@@ -7,17 +7,17 @@
     <div class="container px-5 py-14 mx-auto flex flex-wrap">
       <div class="lg:w-full mx-auto">
 
-        <div class="relative bg-gray-300 border-gray-300 py-10 mb-4 rounded-xl">
+        <div class="relative border-gray-300 py-10 mb-4 rounded-xl">
             <div class="absolute top-0 left-3"><img src="{{ asset('assets/images/Bubbles.png') }}" alt=""></div>
             <div class="absolute bottom-20 right-0"><img src="{{ asset('assets/images/Bubbles.png') }}" alt=""></div>
 
             <div class="relative max-w-screen-md text-center mx-auto">
-                <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Designed for business teams like yours</h2>
-                <p class="text-gray-500 sm:text-xl dark:text-gray-400">Here at Flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</p>
+                <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 ">Designed for business teams like yours</h2>
+                <p class="text-gray-500 sm:text-xl">Here at Flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</p>
             </div>
 
             <div class="flex flex-wrap justify-center items-center">
-            <div class="relative m-4 w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            <div class="relative m-4 w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow ">
                 <a href="#">
                     <img class="p-8 rounded-t-lg" src="{{ asset('assets/images/product.png') }}" alt="product image" />
                 </a>
@@ -25,7 +25,7 @@
                     <div class="flex flex-row justify-between mb-4">
                     <div>
                         <a href="#">
-                            <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">Shiny Dress</h5>
+                            <h5 class="text-xl font-semibold tracking-tight text-gray-900">Shiny Dress</h5>
                         </a>
                         <p>Al Karam</p>
                     </div>
@@ -43,7 +43,7 @@
                             <svg class="w-4 h-4 text-yellow-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
                                 <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
                             </svg>
-                            <svg class="w-4 h-4 text-gray-200 dark:text-gray-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                            <svg class="w-4 h-4 text-gray-200 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
                                 <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
                             </svg>
                         </div>
@@ -53,13 +53,13 @@
                   
                     <p class="mt-2">(4.1k) Customer Reviews</p>
                     <div class="mt-2 flex items-center justify-between">
-                        <span class="text-3xl font-bold text-gray-900 dark:text-white">$599</span>
-                        <a href="#" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add to cart</a>
+                        <span class="text-3xl font-bold text-gray-900 >$599</span>
+                        <a href="#" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Add to cart</a>
                     </div>
                 </div>
             </div>
 
-            <div class="relative m-4 w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            <div class="relative m-4 w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow ">
                 <a href="#">
                     <img class="p-8 rounded-t-lg" src="{{ asset('assets/images/product.png') }}" alt="product image" />
                 </a>
@@ -67,7 +67,7 @@
                     <div class="flex flex-row justify-between">
                     <div>
                         <a href="#">
-                            <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">Shiny Dress</h5>
+                            <h5 class="text-xl font-semibold tracking-tight text-gray-900 ">Shiny Dress</h5>
                         </a>
                     </div>
                     <div class="flex items-center mt-2.5 mb-5">
@@ -91,15 +91,15 @@
                       
                     </div>
                 </div>
-                    <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ms-3">5.0</span>
+                    <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded  ms-3">5.0</span>
                     <div class="flex items-center justify-between">
-                        <span class="text-3xl font-bold text-gray-900 dark:text-white">$599</span>
-                        <a href="#" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add to cart</a>
+                        <span class="text-3xl font-bold text-gray-900 ">$599</span>
+                        <a href="#" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center ">Add to cart</a>
                     </div>
                 </div>
             </div>
 
-            <div class="relative m-4 w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            <div class="relative m-4 w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow ">
                 <a href="#">
                     <img class="p-8 rounded-t-lg" src="{{ asset('assets/images/product.png') }}" alt="product image" />
                 </a>
@@ -107,7 +107,7 @@
                     <div class="flex flex-row justify-between">
                     <div>
                         <a href="#">
-                            <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">Shiny Dress</h5>
+                            <h5 class="text-xl font-semibold tracking-tight text-gray-900 ">Shiny Dress</h5>
                         </a>
                     </div>
                     <div class="flex items-center mt-2.5 mb-5">
@@ -124,22 +124,22 @@
                             <svg class="w-4 h-4 text-yellow-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
                                 <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
                             </svg>
-                            <svg class="w-4 h-4 text-gray-200 dark:text-gray-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                            <svg class="w-4 h-4 text-gray-200 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
                                 <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
                             </svg>
                         </div>
                       
                     </div>
                 </div>
-                    <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ms-3">5.0</span>
+                    <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded  ms-3">5.0</span>
                     <div class="flex items-center justify-between">
-                        <span class="text-3xl font-bold text-gray-900 dark:text-white">$599</span>
-                        <a href="#" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add to cart</a>
+                        <span class="text-3xl font-bold text-gray-900 ">$599</span>
+                        <a href="#" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center ">Add to cart</a>
                     </div>
                 </div>
             </div>
 
-            <div class="relative m-4 w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            <div class="relative m-4 w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow ">
                 <a href="#">
                     <img class="p-8 rounded-t-lg" src="{{ asset('assets/images/product.png') }}" alt="product image" />
                 </a>
@@ -147,7 +147,7 @@
                     <div class="flex flex-row justify-between">
                     <div>
                         <a href="#">
-                            <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">Shiny Dress</h5>
+                            <h5 class="text-xl font-semibold tracking-tight text-gray-900 ">Shiny Dress</h5>
                         </a>
                     </div>
                     <div class="flex items-center mt-2.5 mb-5">
@@ -164,7 +164,7 @@
                             <svg class="w-4 h-4 text-yellow-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
                                 <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
                             </svg>
-                            <svg class="w-4 h-4 text-gray-200 dark:text-gray-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                            <svg class="w-4 h-4 text-gray-200 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
                                 <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
                             </svg>
                         </div>

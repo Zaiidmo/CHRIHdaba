@@ -1,7 +1,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
 <header class="w-screen bg-primary">
     <nav
-        class="container mx-auto w-full flex justify-between items-center h-full px-6 text-gray-600 z-40 py-3 shadow-md relative">
+        class="container mx-auto w-full flex justify-between items-center h-full px-6 text-gray-600 z-40 py-3 relative">
 
         <a class="text-2xl flex items-center justify-between font-bold font-salsa text-white" href="/">
             CHRIH <span class="ml-2 font-salsa text-sm">daba</span>
