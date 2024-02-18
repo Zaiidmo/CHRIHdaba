@@ -3,9 +3,12 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use TCG\Voyager\Models\User;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\Rule;
+
 
 class AuthController extends Controller
 {
@@ -19,5 +22,18 @@ class AuthController extends Controller
             return  view('welcome');
         }
         return back()->with('rejected','Email or Password is inccorect');
+    }
+    public function signup(Request $request){
+        $validatedData = $request->validate([
+            'name' => ['required', 'max:255'],
+            'email' => ['required', 'string', 'lowercase', 'email', 'max:255', Rule::unique(User::class)],
+            'password' => ['required', 'confirmed', 'min:8']
+        ]);
+        // dd($validatedData);
+        $validatedData['password'] = Hash::make($request->password);
+        $user = User::create($validatedData);
+        $user->assignRole('user'); 
+        Auth::login($user);
+        return view('welcome');
     }
 }

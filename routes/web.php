@@ -32,3 +32,5 @@ Route::get('login', function(){
 
 // Login 
 Route::get('signin', [AuthController::class,'signin'])->name('signin');
+// Register
+Route::post('/signup', [AuthController::class, 'signup'])->name('registration');
