@@ -335,7 +335,7 @@
                         </div>
                         <div class="mt-6 text-center text-sm text-slate-600">
                             New Customer ?
-                            <a href="/signup" class="font-medium text-[#4285f4]">Sign up</a>
+                            <button id="register-btn" class="font-medium text-[#4285f4]">Sign up</button>
                         </div>
                     </div>
                 </div>
