@@ -52,7 +52,9 @@
 
           <div class="flex gap-4 mt-8">
             <h3>Quantity</h3>
-            <input class="h-6" type="number" id="tentacles" name="tentacles" min="0" max="100" />
+			<form action="">
+            	<input class="h-6" type="number" id="tentacles" name="tentacles" min="0" max="100" />
+			</form>
             <p>50 available / 104 sold</p>
           </div>
 

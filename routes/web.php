@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\CardController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 use TCG\Voyager\Facades\Voyager;
@@ -21,6 +22,8 @@ Route::get('/', function () {
 });
 
 Route::resource('product', ProductController::class);
+
+Route::resource('card', CardController::class);
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
