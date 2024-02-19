@@ -51,7 +51,7 @@
                 <div id="dropdownBgHover" class="z-10 hidden w-fit p-4 bg-white rounded-lg shadow dark:bg-gray-700">
                     <ul class="py-2 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
                         <li class="profile-img flex justify-around gap-2">
-                            <img class="w-10 h-10" src="http://localhost:8000/storage/users/default.png" alt="{{Auth::user()->name}}  profile">
+                            <img class="w-10 h-10" src="{{ asset('/storage/users/default.png')}}" alt="{{Auth::user()->name}}  profile">
                             <div class="mb-2 border-b profile-body">
                                 <h5>{{ Auth::user()->name }}</h5>
                                 <h6>{{ Auth::user()->email }}</h6>
