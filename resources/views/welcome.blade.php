@@ -286,10 +286,9 @@
 
                         </div>
 
-                        <form action="{{ route('signin') }}" method="get" class="w-full p-4">
+                        <form action="{{ route('signin') }}" method="post" class="w-full p-4">
                             {{-- <label for="email" class="sr-only">Email address</label> --}}
                             @csrf
-                            @method('get')
 
                             <div>
                                 <label for="email">Email address :</label>

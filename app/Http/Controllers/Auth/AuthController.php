@@ -19,7 +19,7 @@ class AuthController extends Controller
         ]);
         if(Auth::attempt($validatedData)){
             $request->session()->regenerate();
-            return  view('welcome');
+            return redirect('/');
         }
         return back()->with('rejected','Email or Password is inccorect');
     }

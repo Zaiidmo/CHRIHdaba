@@ -31,7 +31,7 @@ Route::get('login', function(){
 })->name('login');
 
 // Login 
-Route::get('signin', [AuthController::class,'signin'])->name('signin');
+Route::post('signin', [AuthController::class,'signin'])->name('signin');
 // Register
 Route::post('/signup', [AuthController::class, 'signup'])->name('registration');
 // Logout
