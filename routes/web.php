@@ -25,6 +25,7 @@ Route::resource('product', ProductController::class);
 
 Route::resource('card', CardController::class);
 
+
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });

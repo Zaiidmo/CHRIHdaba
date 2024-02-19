@@ -42,7 +42,8 @@
                     <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg"
                         src="{{ asset('assets/images/product.png') }}" alt="">
                     <div class="flex flex-col justify-between p-4 leading-normal">
-                        <h5 class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology
+                        <h5 class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy
+                            technology
                         </h5>
                         <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise
                             technology acquisitions of 2021.</p>
@@ -72,7 +73,8 @@
                     <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg"
                         src="{{ asset('assets/images/product.png') }}" alt="">
                     <div class="flex flex-col justify-between p-4 leading-normal">
-                        <h5 class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology
+                        <h5 class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy
+                            technology
                         </h5>
                         <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise
                             technology acquisitions of 2021.</p>
@@ -118,11 +120,18 @@
                         <tr>
                             Discount Price
                         </tr>
-                        
+
                     </table>
                     <p class="mt-4">Discount Price</p>
                     <div class="flex justify-center items-center gap-4 mt-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><g fill="none"><path stroke="red" stroke-linecap="round" stroke-width="1.5" d="M12 7v6"/><circle cx="12" cy="16" r="1" fill="red"/><path stroke="red" stroke-width="1.5" d="M7.843 3.802C9.872 2.601 10.886 2 12 2c1.114 0 2.128.6 4.157 1.802l.686.406c2.029 1.202 3.043 1.803 3.6 2.792c.557.99.557 2.19.557 4.594v.812c0 2.403 0 3.605-.557 4.594c-.557.99-1.571 1.59-3.6 2.791l-.686.407C14.128 21.399 13.114 22 12 22c-1.114 0-2.128-.6-4.157-1.802l-.686-.407c-2.029-1.2-3.043-1.802-3.6-2.791C3 16.01 3 14.81 3 12.406v-.812C3 9.19 3 7.989 3.557 7c.557-.99 1.571-1.59 3.6-2.792z"/></g></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                            <g fill="none">
+                                <path stroke="red" stroke-linecap="round" stroke-width="1.5" d="M12 7v6" />
+                                <circle cx="12" cy="16" r="1" fill="red" />
+                                <path stroke="red" stroke-width="1.5"
+                                    d="M7.843 3.802C9.872 2.601 10.886 2 12 2c1.114 0 2.128.6 4.157 1.802l.686.406c2.029 1.202 3.043 1.803 3.6 2.792c.557.99.557 2.19.557 4.594v.812c0 2.403 0 3.605-.557 4.594c-.557.99-1.571 1.59-3.6 2.791l-.686.407C14.128 21.399 13.114 22 12 22c-1.114 0-2.128-.6-4.157-1.802l-.686-.407c-2.029-1.2-3.043-1.802-3.6-2.791C3 16.01 3 14.81 3 12.406v-.812C3 9.19 3 7.989 3.557 7c.557-.99 1.571-1.59 3.6-2.792z" />
+                            </g>
+                        </svg>
                         <span class="text-red-400">You must log in to use the discount code</span>
                     </div>
                     <hr class="mt-2">
@@ -133,12 +142,15 @@
                     <button
                         class="mt-auto text-white bg-gray-500 border-0 py-2 px-4 w-full focus:outline-none hover:bg-gray-500 rounded">
                         <span class="flex gap-2 justify-center items-center">
-                            <svg width="23" height="22" viewBox="0 0 23 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M16.5 7.66667H6.5M16.5 7.66667C19.2614 7.66667 21.5 9.65651 21.5 12.1111V16.5556C21.5 19.0102 19.2614 21 16.5 21H6.5C3.73858 21 1.5 19.0102 1.5 16.5556V12.1111C1.5 9.65651 3.73858 7.66667 6.5 7.66667M16.5 7.66667V5.44444C16.5 2.98985 14.2614 1 11.5 1C8.73858 1 6.5 2.98985 6.5 5.44444V7.66667" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <svg width="23" height="22" viewBox="0 0 23 22" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M16.5 7.66667H6.5M16.5 7.66667C19.2614 7.66667 21.5 9.65651 21.5 12.1111V16.5556C21.5 19.0102 19.2614 21 16.5 21H6.5C3.73858 21 1.5 19.0102 1.5 16.5556V12.1111C1.5 9.65651 3.73858 7.66667 6.5 7.66667M16.5 7.66667V5.44444C16.5 2.98985 14.2614 1 11.5 1C8.73858 1 6.5 2.98985 6.5 5.44444V7.66667"
+                                    stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                             </svg>
                             <span class="text-xl">Checkout</span>
                         </span>
-                        
+
                     </button>
                 </div>
             </div>
@@ -150,77 +162,36 @@
                 <h1 class="text-2xl font-medium title-font mb-4 text-gray-900 tracking-widest">You might also like</h1>
             </div>
             <div class="flex flex-row">
-                <div class="p-2 lg:w-1/2 mr-8">
-                    <div class="h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center sm:text-left">
-                        <img alt="team"
-                            class="flex-shrink-0 rounded-lg w-48 h-48 object-cover object-center sm:mb-0 mb-4"
-                            src="{{ asset('assets/images/left.png') }}">
-                        <div class="ml-2 flex-grow bg-gray-200 p-4 h-48 rounded-lg">
-                            <h2 class="title-font my-2 font-medium text-lg text-gray-900">SHORT PRINTED DRESS</h2>
-                            <p class="text-gray-500 mb-8"><span class="mr-2">$69.99</span>$129.99<span
-                                    class="bg-red-500 text-white ml-2">- 40%</span></p>
-                            <button class="group relative h-12 w-64 overflow-hidden rounded-lg bg-white text-lg shadow">
-                                <div
-                                    class="absolute inset-0 w-3 bg-primary transition-all duration-[250ms] ease-out group-hover:w-full">
-                                </div>
-                                <span class="relative text-black group-hover:text-white"><span
-                                        class="text-gray-400 mr-2">$39</span>Add to card</span>
-                            </button>
+                @foreach ($suggest as $suggest)
+                    <div class="p-2 lg:w-1/2 mr-8">
+                        <div
+                            class="h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center sm:text-left">
+                            <img alt="team"
+                                class="rounded-lg w-fullg h-fullg sm:mb-0 "
+                                src="{{ asset('storage/' . $suggest->images) }}" alt="product image" />
+                            <div class="flex-grow bg-gray-200 p-4 h-48 rounded-lg">
+                                <h2 class="title-font my-2 font-medium text-lg text-gray-900">{{ $suggest->name }}</h2>
+                                <p class="text-gray-500 mb-8"><span class="mr-2">{{ $suggest->price }} $</p>
+                                <button
+                                    class="group relative h-12 w-64 overflow-hidden rounded-lg bg-white text-lg shadow">
+                                    <div
+                                        class="absolute inset-0 w-3 bg-primary transition-all duration-[250ms] ease-out group-hover:w-full">
+                                    </div>
+                                    <span class="relative text-black group-hover:text-white"><span
+                                            class="text-gray-400 mr-2">Add to card</span>
+                                </button>
+                            </div>
                         </div>
                     </div>
-                </div>
-
-                <div class="p-2 lg:w-1/2 mr-8">
-                    <div class="h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center sm:text-left">
-                        <img alt="team"
-                            class="flex-shrink-0 rounded-lg w-48 h-48 object-cover object-center sm:mb-0 mb-4"
-                            src="{{ asset('assets/images/left.png') }}">
-                        <div class="ml-2 flex-grow bg-gray-200 p-4 h-48 rounded-lg">
-                            <h2 class="title-font my-2 font-medium text-lg text-gray-900">SHORT PRINTED DRESS</h2>
-                            <p class="text-gray-500 mb-8"><span class="mr-2">$69.99</span>$129.99<span
-                                    class="bg-red-500 text-white ml-2">- 40%</span></p>
-
-                            <button class="group relative h-12 w-64 overflow-hidden rounded-lg bg-white text-lg shadow">
-                                <div
-                                    class="absolute inset-0 w-3 bg-primary transition-all duration-[250ms] ease-out group-hover:w-full">
-                                </div>
-                                <span class="relative text-black group-hover:text-white"><span
-                                        class="text-gray-400 mr-2">$39</span>Add to card</span>
-                            </button>
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="p-2 lg:w-1/2">
-                    <div class="h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center sm:text-left">
-                        <img alt="team"
-                            class="flex-shrink-0 rounded-lg w-48 h-48 object-cover object-center sm:mb-0 mb-4"
-                            src="{{ asset('assets/images/left.png') }}">
-                        <div class="ml-2 flex-grow bg-gray-200 p-4 h-48 rounded-lg">
-                            <h2 class="title-font my-2 font-medium text-lg text-gray-900">SHORT PRINTED DRESS</h2>
-                            <p class="text-gray-500 mb-8"><span class="mr-2">$69.99</span>$129.99<span
-                                    class="bg-red-500 text-white ml-2">- 40%</span></p>
-
-                            <button class="group relative h-12 w-64 overflow-hidden rounded-lg bg-white text-lg shadow">
-                                <div
-                                    class="absolute inset-0 w-3 bg-primary transition-all duration-[250ms] ease-out group-hover:w-full">
-                                </div>
-                                <span class="relative text-black group-hover:text-white"><span
-                                        class="text-gray-400 mr-2">$39</span>Add to card</span>
-                            </button>
-
-                        </div>
-                    </div>
-
-                </div>
-
+                @endforeach
             </div>
         </div>
         <a href="product">
             <div class="absolute -bottom-6 right-40 flex items-center gap-2">
                 <p>See more</p>
-                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="black" d="M8 5.14v14l11-7z"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                    <path fill="black" d="M8 5.14v14l11-7z" />
+                </svg>
             </div>
         </a>
     </section>
