@@ -48,44 +48,27 @@
                 </li>
                 {{-- Menu --}}
                 <!-- Dropdown menu -->
-                <div id="dropdownBgHover" class="z-10 hidden w-48 bg-white rounded-lg shadow dark:bg-gray-700">
-                    <ul class="p-3 space-y-1 text-sm text-gray-700 dark:text-gray-200"
-                        aria-labelledby="dropdownBgHoverButton">
-                        <li class="profile-img">
-                            <img class="profile-img">
+                <div id="dropdownBgHover" class="z-10 hidden w-fit p-4 bg-white rounded-lg shadow dark:bg-gray-700">
+                    <ul class="py-2 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
+                        <li class="profile-img flex justify-around gap-2">
+                            <img class="w-10 h-10" src="http://localhost:8000/storage/users/default.png" alt="{{Auth::user()->name}}  profile">
                             <div class="mb-2 border-b profile-body">
                                 <h5>{{ Auth::user()->name }}</h5>
                                 <h6>{{ Auth::user()->email }}</h6>
                             </div>
                         </li>
-                        <li class="divider"></li>
-                        <?php $nav_items = config('voyager.dashboard.navbar_items'); ?>
-                        @if (is_array($nav_items) && !empty($nav_items))
-                            @foreach ($nav_items as $name => $item)
-                                <li {!! isset($item['classes']) && !empty($item['classes']) ? 'class="' . $item['classes'] . '"' : '' !!}>
-                                    @if (isset($item['route']) && $item['route'] == 'logout')
-                                        <form action="{{ route('logout') }}" method="post">
-                                            @csrf
-                                            <button type="submit" class="btn btn-danger btn-block">
-                                                @if (isset($item['icon_class']) && !empty($item['icon_class']))
-                                                    <i class="{!! $item['icon_class'] !!}"></i>
-                                                @endif
-                                                {{ __($name) }}
-                                            </button>
-                                        </form>
-                                    @else
-                                        <a href="{{ isset($item['route']) && Route::has($item['route']) ? route($item['route']) : (isset($item['route']) ? $item['route'] : '#') }}"
-                                            {!! isset($item['target_blank']) && $item['target_blank'] ? 'target="_blank"' : '' !!}>
-                                            @if (isset($item['icon_class']) && !empty($item['icon_class']))
-                                                <i class="{!! $item['icon_class'] !!}"></i>
-                                            @endif
-                                            {{ __($name) }}
-                                        </a>
-                                    @endif
-                                </li>
-                            @endforeach
+                        @if (Auth::user()->hasRole('admin'))
+                        <li>
+                          <a href="/admin" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</a>
+                        </li>
                         @endif
-                    </ul>
+                        <li>
+                          <a href="admin/profile" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Profile</a>
+                        </li>
+                      </ul>
+                      <div class="py-1">
+                        <a href="/logout" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign out</a>
+                      </div>
                 </div>
             @else
             <button id="login-btn"
