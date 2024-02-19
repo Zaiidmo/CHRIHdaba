@@ -13,8 +13,9 @@ class ProductController extends Controller
         return view('product.index', compact('products'));
     }
 
-    public function show()
+    public function show(Product $product)
     {
-        return view('product.show');
+        $suggest = Product::latest()->take(3)->get();
+        return view('product.show', compact('product', 'suggest'));
     }
 }
