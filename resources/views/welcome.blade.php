@@ -43,7 +43,7 @@
                 <div class="h-full lg:grid grid-cols-1 gap-6">
                     @foreach ($products as $product)
                         <div style="background-image: url({{ asset('storage/' . $product->image) }})"
-                            class="max-w-sm p-6 bg-white border border-gray-200 rounded-3xl shadow dark:bg-gray-800 dark:border-gray-700">
+                            class="bg-cover bg-center max-w-sm p-6 bg-white border border-gray-200 rounded-3xl shadow dark:bg-gray-800 dark:border-gray-700">
                             <svg class="w-7 h-7 text-gray-500 dark:text-gray-400 mb-3" aria-hidden="true"
                                 xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                                 <path
