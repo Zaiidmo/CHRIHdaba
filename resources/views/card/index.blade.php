@@ -167,8 +167,8 @@
                         <div
                             class="h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center sm:text-left">
                             <img alt="team"
-                                class="rounded-lg w-fullg h-fullg sm:mb-0 "
-                                src="{{ asset('storage/' . $suggest->images) }}" alt="product image" />
+                                class="rounded-lg w-48 h-full sm:mb-0 "
+                                src="{{ asset('storage/' . $suggest->image) }}" alt="product image" />
                             <div class="flex-grow bg-gray-200 p-4 h-48 rounded-lg">
                                 <h2 class="title-font my-2 font-medium text-lg text-gray-900">{{ $suggest->name }}</h2>
                                 <p class="text-gray-500 mb-8"><span class="mr-2">{{ $suggest->price }} $</p>
