@@ -7,16 +7,16 @@
 <section class="text-gray-600 body-font overflow-hidden">
    
 	<div class="container px-5 py-14 mx-auto">
-        <div class="ml-40 bg-gray-300 text-black inline-block p-4 mb-4 rounded-3xl">
+        <div class="ml-40 bg-gray-300 text-black inline-block p-2 mb-4 rounded-3xl">
             CHRIH daba > Products > Clothes > SHORT PRINTED DRESS
         </div>
         
 	  <div class="lg:w-4/5 mx-auto flex">
-		<img alt="ecommerce" class="lg:w-1/2 w-full lg:h-auto h-64"  style="border-radius: 3rem;" src="{{ asset('assets/images/main clothe.png') }}">
+		<img alt="ecommerce" class="lg:w-1/2 w-full lg:h-auto h-64"  style="border-radius: 3rem;" src="{{ asset('storage/' . $product->image)}}">
 		<div class="lg:w-1/2 w-full lg:pl-10 lg:py-10 mt-6 lg:mt-0">
 		  
-		  <h1 class="text-gray-900 text-3xl title-font font-medium mb-1">SHORT PRINTED DRESS</h1>
-          <p class="text-xl fonct-bold">$39.99</p>
+		  <h1 class="text-gray-900 text-3xl title-font font-medium mb-1">{{$product->name}}</h1>
+          <p class="text-xl fonct-bold">{{ $product->price }}</p>
 		  
 		  <div class="flex mt-6 items-center pb-5 border-b-2 border-gray-100 mb-5">
 			<div class="flex">
@@ -45,7 +45,7 @@
           <div class="flex gap-4">
             <span>Shipping</span>
             <div>
-                <h3>Free Shipping to Victoria teritory</h3>
+                <h3>Free Shipping to Your Location</h3>
                 <p>Delivery Time: 14–17 days</p>
             </div>
           </div>
@@ -117,15 +117,16 @@
 <section class="">
 	<div class="px-60 ml-10 text-2xl poppins"><h1>You May Also Like</h1></div>
 	<div class="flex flex-wrap justify-center items-center">
+		@foreach ($suggest as $suggest)
 		<div class="relative m-4 w-full max-w-sm bg-white border border-black rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
 			<a href="#">
-				<img class="p-8 rounded-t-lg" src="{{ asset('assets/images/product.png') }}" alt="product image" />
+				<img class="pb-8 rounded-t-lg" src="{{ asset('storage/' . $suggest->image)}}" alt="product image" />
 			</a>
 			<div class="px-5 pb-5">
 				<div class="flex flex-row justify-between mb-4">
 				<div>
-					<a href="#">
-						<h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">Shiny Dress</h5>
+					<a href="{{ route('product.show', $product->id) }}">
+						<h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">{{ $suggest->name }}</h5>
 					</a>
 					<p>Al Karam</p>
 				</div>
@@ -152,82 +153,10 @@
 			</div>
 			</div>
 		</div>
-
-
-		<div class="relative m-4 w-full max-w-sm bg-white border border-black rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-			<a href="#">
-				<img class="p-8 rounded-t-lg" src="{{ asset('assets/images/product.png') }}" alt="product image" />
-			</a>
-			<div class="px-5 pb-5">
-				<div class="flex flex-row justify-between mb-4">
-				<div>
-					<a href="#">
-						<h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">Shiny Dress</h5>
-					</a>
-					<p>Al Karam</p>
-				</div>
-				<div class="flex items-center mt-2.5 mb-5">
-					<div class="flex items-center space-x-1 rtl:space-x-reverse">
-						<svg class="w-4 h-4 text-yellow-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-							<path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
-						</svg>
-						<svg class="w-4 h-4 text-yellow-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-							<path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
-						</svg>
-						<svg class="w-4 h-4 text-yellow-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-							<path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
-						</svg>
-						<svg class="w-4 h-4 text-yellow-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-							<path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
-						</svg>
-						<svg class="w-4 h-4 text-gray-200 dark:text-gray-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-							<path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
-						</svg>
-					</div>
-				  
-				</div>
-			</div>
-			</div>
-		</div>
-
-		<div class="relative m-4 w-full max-w-sm bg-white border border-black rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-			<a href="#">
-				<img class="p-8 rounded-t-lg" src="{{ asset('assets/images/product.png') }}" alt="product image" />
-			</a>
-			<div class="px-5 pb-5">
-				<div class="flex flex-row justify-between mb-4">
-				<div>
-					<a href="#">
-						<h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">Shiny Dress</h5>
-					</a>
-					<p>Al Karam</p>
-				</div>
-				<div class="flex items-center mt-2.5 mb-5">
-					<div class="flex items-center space-x-1 rtl:space-x-reverse">
-						<svg class="w-4 h-4 text-yellow-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-							<path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
-						</svg>
-						<svg class="w-4 h-4 text-yellow-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-							<path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
-						</svg>
-						<svg class="w-4 h-4 text-yellow-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-							<path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
-						</svg>
-						<svg class="w-4 h-4 text-yellow-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-							<path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
-						</svg>
-						<svg class="w-4 h-4 text-gray-200 dark:text-gray-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-							<path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
-						</svg>
-					</div>
-				  
-				</div>
-			</div>
-			</div>
-		</div>
+		@endforeach
 	</div>
 	<div class="px-64 flex items-center">
-		<a class="ml-auto" href="product">
+		<a class="ml-auto" href="{{route('product.index')}}">
 			<div class=" flex items-center gap-2">
 				<p>For more items</p>
 				<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 20 20">
