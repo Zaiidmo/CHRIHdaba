@@ -13,7 +13,4 @@ class OrderController extends Controller
         return view('card.index', compact('order', 'suggest'));
     }
     
-    public function store(Request $request){
-        
-    }
 }
