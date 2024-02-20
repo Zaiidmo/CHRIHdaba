@@ -23,7 +23,7 @@ use TCG\Voyager\Models\Category;
 Route::get('/', function () {
     $products = Product::latest()->take(2)->get();
     $newArrivals = Product::latest()->take(4)->get();
-    $popularCategories = Voyager::model('Category')->get();
+    $popularCategories = Voyager::model('Category')->take(4)->get();
     return view('welcome', compact('products', 'newArrivals', 'popularCategories'));
 });
 
