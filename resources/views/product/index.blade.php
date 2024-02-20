@@ -8,6 +8,55 @@
             <div class="lg:w-full mx-auto">
 
                 <div class="relative border-gray-300 py-10 mb-4 rounded-xl">
+
+                    <div class="my-8">
+                        <form action="{{ route('search') }}" method="GET" class="max-w-lg mx-auto" id="product">
+                            <div class="flex items-center justify-between space-x-4">
+                                <div class="relative flex-1">
+                                    <select id="categoryFilter" class="block w-full p-2.5 text-sm text-gray-900 bg-gray-50 rounded-e-lg border-s-gray-50 border-s-2 border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-s-gray-700  dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500">
+                                        <option value="">All categories</option>
+                                        @foreach($categories as $category)
+                                            <option value="{{$category->id}}">{{$category->name}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <div class="relative flex-1">
+                                    <input name="search" type="text" id="searchInput" class="block w-full p-2.5 text-sm text-gray-900 bg-gray-50 rounded-e-lg border-s-gray-50 border-s-2 border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-s-gray-700  dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500" placeholder="Search product..." />
+                                </div>
+                                <button type="submit" class="px-4 py-2 text-sm font-medium text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                                    Search
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                    {{-- <div class="relative">
+                        <ul>
+                            @foreach($categories as $category)
+                            <li>{{$category->id}}->{{$category->name}}</li>
+                            @endforeach
+                        </ul>
+                    </div> --}}
+                    
+
+                    {{-- <ul class="flex flex-wrap text-sm font-medium text-center text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400">
+                        <li class="me-2">
+                            <a href="#" aria-current="page" class="inline-block p-4 text-blue-600 bg-gray-100 rounded-t-lg active dark:bg-gray-800 dark:text-blue-500">Profile</a>
+                        </li>
+                        <li class="me-2">
+                            <a href="#" class="inline-block p-4 rounded-t-lg hover:text-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800 dark:hover:text-gray-300">Dashboard</a>
+                        </li>
+                        <li class="me-2">
+                            <a href="#" class="inline-block p-4 rounded-t-lg hover:text-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800 dark:hover:text-gray-300">Settings</a>
+                        </li>
+                        <li class="me-2">
+                            <a href="#" class="inline-block p-4 rounded-t-lg hover:text-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800 dark:hover:text-gray-300">Contacts</a>
+                        </li>
+                        <li>
+                            <a class="inline-block p-4 text-gray-400 rounded-t-lg cursor-not-allowed dark:text-gray-500">Disabled</a>
+                        </li>
+                    </ul> --}}
+
+
                     <div class="absolute top-0 left-3"><img src="{{ asset('assets/images/Bubbles.png') }}" alt="">
                     </div>
                     <div class="absolute bottom-20 right-0"><img src="{{ asset('assets/images/Bubbles.png') }}" alt="">
@@ -84,6 +133,5 @@
 
             </div>
         </div>
-
     </section>
 @endsection

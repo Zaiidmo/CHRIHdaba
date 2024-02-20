@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\CardController;
+use App\Http\Controllers\filterController;
 use App\Http\Controllers\ProductController;
 use App\Models\Product;
 use Illuminate\Support\Facades\Route;
@@ -33,6 +34,9 @@ Route::resource('card', CardController::class);
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
+
+// filter
+Route::get('search', [ProductController::class, 'search'])->name('search');
 
 Route::get('login', function () {
     return redirect()->route('voyager.login');

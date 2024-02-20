@@ -77,8 +77,9 @@
             <div class="grid gap-8 mb-6 md:mb-16 md:grid-cols-2 md:grid-rows-2">
                 {{-- Category --}}
                 @foreach ($popularCategories as $category)
-                <div class="col-span-1 p-6 bg-white border border-gray-200 rounded-lg shadow "">
-                    <a href="#">
+                <div class="col-span-1 p-6 bg-white border border-gray-200 rounded-lg shadow" href="route">
+                    <a>
+                        {{-- , ['category' => $category->id] --}}
                         <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 ">Category :: {{$category->name}}</h5>
                     </a>
                     <p class="mb-3 font-normal text-gray-700 ">{{ $category->description }}</p>
