@@ -12,7 +12,7 @@
         </div>
         
 	  <div class="lg:w-4/5 mx-auto flex">
-		<img alt="ecommerce" class="lg:w-1/2 w-full lg:h-auto h-64"  style="border-radius: 3rem;" src="{{ asset('storage/' . $product->images)}}">
+		<img alt="ecommerce" class="lg:w-1/2 w-full lg:h-auto h-64"  style="border-radius: 3rem;" src="{{ asset('storage/' . $product->image)}}">
 		<div class="lg:w-1/2 w-full lg:pl-10 lg:py-10 mt-6 lg:mt-0">
 		  
 		  <h1 class="text-gray-900 text-3xl title-font font-medium mb-1">{{$product->name}}</h1>
@@ -120,7 +120,7 @@
 		@foreach ($suggest as $suggest)
 		<div class="relative m-4 w-full max-w-sm bg-white border border-black rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
 			<a href="#">
-				<img class="pb-8 rounded-t-lg" src="{{ asset('storage/' . $suggest->images)}}" alt="product image" />
+				<img class="pb-8 rounded-t-lg" src="{{ asset('storage/' . $suggest->image)}}" alt="product image" />
 			</a>
 			<div class="px-5 pb-5">
 				<div class="flex flex-row justify-between mb-4">
