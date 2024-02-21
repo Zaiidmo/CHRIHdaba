@@ -32,7 +32,7 @@ Route::resource('product', ProductController::class);
 //Card Routes
 Route::resource('card', CardController::class);
 Route::Post('/addCart', [CardController::class,'addToCART'])->name('card.add');
-Route::Delete('/cardUpdate',[CardController::class,'removeFromCart'])->name('product.destroy');
+Route::delete('/deleteFromCard', [CardController::class, 'removeFromCart'])->name('card.remove');
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
