@@ -29,7 +29,7 @@ Route::get('/', function () {
 
 Route::resource('product', ProductController::class);
 
-Route::resource('card', OrderController::class);
+Route::resource('card', CardController::class);
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
@@ -40,7 +40,7 @@ Route::get('login', function () {
 })->name('login');
 
 //Card 
-Route::Post('/addCart', [OrderController::class,'addToCard'])->name('card.add');
+// Route::Post('/addCart', [OrderController::class,'addToCart'])->name('cart.add');
 
 // Login
 Route::post('signin', [AuthController::class, 'signin'])->name('signin');

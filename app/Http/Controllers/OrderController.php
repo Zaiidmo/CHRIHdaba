@@ -10,24 +10,37 @@ use Illuminate\Support\Facades\Auth;
 class OrderController extends Controller
 {
     public function index(Order $order){
-        $suggest = Product::latest()->take(3)->get();
-        return view('card.index', compact('order', 'suggest'));
+        //
     }
-    public function addToCard(Request $request)
-    {
-        $user = Auth::user();
-        $product = Product::findOrFail($request->id);
-        $order = $user->order;
-        if ($order === null) {
-            $order = Order::create(['user_id' => $user->id]);
-        } else {
-        }
+    public function addToCart(Request $request)
+{
+    $user = Auth::user();
+    $product = Product::find($request->id);
 
-        $order->products()->attach($product->id, [
-            'price' => $product->price,
+    if (!$product) {
+        return redirect()->back()->with('error', 'Product not found.');
+    }
+
+    $order = $user->order;
+    $totalAmount = $product->price;
+
+    if ($order === null) {
+        $order = Order::create([
+            'user_id' => $user->id,
+            'status' => 'pending',
+            'totalAmount' => $totalAmount
         ]);
-
-        return redirect()->back()->with('success', 'Product added to cart successfully');
+    } else {
+        // Update the total amount of the order
+        $order->totalAmount += $totalAmount;
+        $order->save();
     }
+
+    // Add the product to the order
+    $order->products()->attach($product->id);
+
+    return redirect('card')->with('success', 'Product added to cart successfully');
+}
+
     
 }
