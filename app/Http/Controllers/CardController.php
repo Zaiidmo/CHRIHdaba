@@ -9,18 +9,21 @@ use Illuminate\Support\Facades\Auth;
 
 class CardController extends Controller
 {
-    public function index(Card $card){
+    public function index(Card $card)
+    {
         $user = Auth::user();
         $card = $user->cart;
         $suggest = Product::latest()->take(3)->get();
-        
-        // Check if the user has a card
-        if ($card) {
-            $cardProducts = $card->products;
-            return view('card.index', compact('card','cardProducts', 'suggest'));
-        }
 
-        return view('card.index', compact('card', 'suggest', ['cardProducts' => []]));
+        // Check if the user has a card
+        if ($user->cart) {
+            $cardProducts = $user->cart->products;
+            return view('card.index', compact('card','suggest', 'cardProducts'));
+        } else {
+            // If the user doesn't have a card, pass an empty array
+            $cardProducts = [];
+            return view('card.index', compact('card','suggest', 'cardProducts'));
+        }
     }
     public function addToCART(Request $request)
     {
@@ -30,7 +33,7 @@ class CardController extends Controller
         // dd($card);
         if ($card === null) {
             $card = Card::create(['user_id' => $user->id]);
-        } 
+        }
         $card->products()->attach($product->id);
 
         return redirect()->back()->with('success', 'Product added to cart successfully');
@@ -40,12 +43,12 @@ class CardController extends Controller
         $productId = $request->id;
         $user = Auth::user();
         $cart = $user->cart;
-    
+
         if ($cart) {
             $cart->products()->detach($productId);
             return response()->json(['success' => true, 'message' => 'Product removed from cart successfully']);
         }
-    
+
         return response()->json(['success' => false, 'message' => 'User does not have a cart']);
     }
 }

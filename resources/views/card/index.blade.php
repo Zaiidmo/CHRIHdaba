@@ -4,59 +4,63 @@
 
 @section('content')
     <section class="sm:flex sm:flex-col lg:grid lg:grid-cols-3 text-gray-600 body-font pt-24 lg:px-64">
-        <div class="lg:col-span-2 flex flex-col gap-4">
-            {{ $card->totalAmount }}
-            @foreach ($cardProducts as $cardProduct)
-                <div class="flex gap-4 w-auto items-center mr-16">
-                    <div
-                        class="flex flex-col items-center bg-white md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
-                        <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg"
-                            src="{{ asset('storage/' . $cardProduct->image) }}" alt="Product Image">
-                        <div class="flex flex-col justify-between p-4 leading-normal">
-                            <h5 class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-                                {{ $cardProduct->name }}
-                            </h5>
-                            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{ $cardProduct->description }}</p>
+        <div class="lg:col-span-2 flex flex-col  gap-4">
+            @if (count($cardProducts) === 0)
+            <div class="text-lg font-bold  text-gray-900">Your cart is empty.</div>
+            @else
+            {{ $card->totalAmount}}
+                @foreach ($cardProducts as $cardProduct)
+                    <div class="flex gap-4 w-auto justify-between items-center mr-16">
+                        <div
+                            class="flex flex-col items-center bg-white md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+                            <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg"
+                                src="{{ asset('storage/' . $cardProduct->image) }}" alt="Product Image">
+                            <div class="flex flex-col justify-between p-4 leading-normal">
+                                <h5 class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">
+                                    {{ $cardProduct->name }}
+                                </h5>
+                                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{ $cardProduct->description }}
+                                </p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="relative flex items-center max-w-[8rem]">
-                        <button type="button" id="decrement-button" data-input-counter-decrement="quantity-input"
-                            class="bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:border-gray-600 hover:bg-gray-200 border border-gray-300 rounded-s-lg p-3 h-11 focus:ring-gray-100 dark:focus:ring-gray-700 focus:ring-2 focus:outline-none">
-                            <svg class="w-3 h-3 text-gray-900 dark:text-white" aria-hidden="true"
-                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 2">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M1 1h16" />
-                            </svg>
-                        </button>
-                        <input type="number" id="quantity" data-input-counter aria-describedby="helper-text-explanation"
-                            class="bg-gray-50 border-x-0 border-gray-300 h-11 text-center text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full py-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
-                        <button type="button" id="increment-button" data-input-counter-increment="quantity-input"
-                            class="bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:border-gray-600 hover:bg-gray-200 border border-gray-300 rounded-e-lg p-3 h-11 focus:ring-gray-100 dark:focus:ring-gray-700 focus:ring-2 focus:outline-none">
-                            <svg class="w-3 h-3 text-gray-900 dark:text-white" aria-hidden="true"
-                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M9 1v16M1 9h16" />
-                            </svg>
+                        <div class="px-4 py-3 text-lg text-gray-900">{{ $cardProduct->price }} $</div>
+                        <button id="deleteFromCart" data-product-id="{{ $cardProduct->id }}"
+                            class="mt-4 font-semibold text-red-400 text-sm">
+                            Remove
                         </button>
                     </div>
-                    <div id="totalPrice" class="px-4 py-3 text-lg text-gray-900">{{ $cardProduct->price }} $</div>
-                    <button id="deleteFromCart" data-product-id="{{ $cardProduct->id }}"
-                        class="mt-4 font-semibold text-red-400 text-sm">
-                        Remove
-                    </button>
-                </div>
-                <?php $card->totalAmount += $cardProduct->price; ?>
-            @endforeach
+                    <?php $card->totalAmount += $cardProduct->price; ?>
+                @endforeach
+                @endif
         </div>
         <div class="lg:col-span-1 flex flex-wrap">
             <div class="p-4 xl:w-3/4 md:w-1/2 w-full">
                 <div class="h-full p-6 rounded-lg bg-gray-100 flex flex-col relative overflow-hidden">
                     <h2 class="text-sm tracking-widest title-font mb-1 font-medium">Order Summary</h2>
-
+                    @if(count($cardProducts) === 0)
                     <table class="mt-4">
                         <tr>
                             <td>Price</td>
-                            <td id="totalAmount">$0</td>
+                            <td id=""> $0</td>
+                        </tr>
+                        <tr>
+                            <td>Shipping</td>
+                            <td>$0</td>
+                        </tr>
+                        <tr>
+                            <td>Tax</td>
+                            <td>$0</td>
+                        </tr>
+                        <tr>
+                            Discount Price
+                        </tr>
+
+                    </table>
+                    @else
+                    <table class="mt-4">
+                        <tr>
+                            <td>Price</td>
+                            <td> ${{ $card->totalAmount }}</td>
                         </tr>
                         <tr>
                             <td>Shipping</td>
@@ -76,7 +80,7 @@
                         <hr class="mt-2">
                         <div class="flex justify-between my-2">
                             <h1>Total Price</h1>
-                            <p>{{ + $card->totalAmount / 100 + 10 }}</p>
+                            <p>{{ $card->totalAmount + $card->totalAmount / 100 + 10 }}</p>
                         </div>
                         <button
                             class="mt-auto text-white bg-gray-500 border-0 py-2 px-4 w-full focus:outline-none hover:bg-gray-500 rounded">
@@ -123,6 +127,7 @@
                     @endauth
                 </div>
             </div>
+            @endif  
     </section>
 
     <section class="text-gray-600 body-font">
@@ -166,6 +171,7 @@
 
 @endsection
 @section('scripts')
+@if(count($cardProducts) > 0)
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
     <script>
@@ -202,28 +208,6 @@
             });
         });
     </script>
-    {{-- Update The Unit Price  --}}
-    <script>
-        $(document).ready(function() {
-            // Function to update the total price based on quantity
-            function updateTotalPrice() {
-                var quantity = parseInt($('#quantity').val()); // Get the quantity value
-                var unitPrice = parseFloat('{{ $cardProduct->price }}'); // Get the unit price from PHP
-
-                var totalPrice = quantity * unitPrice; // Calculate the total price
-                $('#totalPrice').text(totalPrice.toFixed(2) + ' $'); // Update the displayed total price
-                $('#totalAmount').text('$' + totalPrice.toFixed(2));
-            }
-
-            // Listen for changes in the quantity input field
-            $(document).on('change', '#quantity', function() {
-                updateTotalPrice(); // Call the updateTotalPrice function when the quantity changes
-            });
-
-            // Call updateTotalPrice initially to set the initial total price
-            updateTotalPrice();
-        });
-    </script>
-
+@endif
 
 @endsection
