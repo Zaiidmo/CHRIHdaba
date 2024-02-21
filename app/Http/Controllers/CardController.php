@@ -35,7 +35,7 @@ class CardController extends Controller
 
         return redirect()->back()->with('success', 'Product added to cart successfully');
     }
-    public function removeProductCart(Request $request)
+    public function Cart(Request $request)
     {
         $productId = $request->id;
         $user = Auth::user();
