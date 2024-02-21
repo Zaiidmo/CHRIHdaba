@@ -17,15 +17,21 @@
                         <h2 class="mb-12 text-5xl font-salsa font-semibold text-gray-900">Dive into a World of Wonders with CHRIHdaba's Spectacular Selections!</h2>
                     </div>
 
-                    <div id='search-form' class="mb-8"  >
+                    <div method="" id="search_bar" class="mb-8 flex flex-col">
+                        <div id="category-tabs" class="flex justify-center mb-4">
+                            <button type="submit" class="mr-4 category-tab w-40 bg-gradient-to-r from-blue-500 to-red-500 text-white px-4 py-2 text-xl rounded font-medium focus:ring ring-black ring-opacity-10 gradient element-to-rotate" data-category="all">All</button>
 
-                        <label
-                            class="mx-auto mt-8 relative bg-white min-w-sm max-w-2xl flex flex-col md:flex-row items-center justify-center border py-2 px-2 rounded-2xl gap-2 shadow-2xl focus-within:border-gray-300"
+                            @foreach ($categories as $category)
+                            <button type="submit" class="mr-4 category-tab w-40 bg-gradient-to-r from-blue-500 to-red-500 text-white px-4 py-2 text-xl rounded font-medium focus:ring ring-black ring-opacity-10 gradient element-to-rotate" data-category="{{ $category->id }}">{{ $category->name }}</button>
+                            @endforeach
+
+                        </div>
+
+                        <label class="mx-auto mt-8 relative bg-white min-w-sm max-w-2xl flex flex-col md:flex-row items-center justify-center border py-2 px-2 rounded-2xl gap-2 shadow-2xl focus-within:border-gray-300"
                             for="search-bar">
-
-                            <input id="search-bar" placeholder="your keyword here" name="search"
+                            <input type="search" id="search" placeholder="your keyword here" name=""
                                 class="px-6 py-2 w-full rounded-md flex-1 outline-none bg-white" required="">
-                            <button type="submit"
+                            <button type="submit" name="submit"
                                 class="w-full md:w-auto px-6 py-3 bg-primary-300 border-primary-100 text-black fill-white active:scale-95 duration-100 border will-change-transform overflow-hidden relative rounded-xl transition-all">
                                 <div class="flex items-center transition-all opacity-1">
                                     <span class="text-sm font-semibold whitespace-nowrap truncate mx-auto">
@@ -35,10 +41,11 @@
                             </button>
                         </label>
                     </div>
-
-                    <div class="flex flex-wrap justify-center items-center">
+                    
+                    <div id="place" class="flex flex-wrap justify-center items-center">
                         @foreach ($products as $product)
-                        <div
+                        
+                        <div id="card"
                             class="relative m-4 w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                             <a href="{{ route('product.show', $product->id) }}">
                                 <img class="pb-8g rounded-t-lg" src="{{ asset('storage/' . $product->image)}}"
@@ -102,4 +109,6 @@
         </div>
 
     </section>
+ 
 @endsection
+

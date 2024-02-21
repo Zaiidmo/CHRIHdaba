@@ -45,3 +45,9 @@ Route::post('signin', [AuthController::class, 'signin'])->name('signin');
 Route::post('/signup', [AuthController::class, 'signup'])->name('registration');
 // Logout
 Route::any('logout', [AuthController::class, 'getout'])->name('logout');
+
+// search
+Route::get('/search', [ProductController::class, 'search']);
+// using category
+Route::get('/search-by-category', [ProductController::class, 'searchByCategory']);
+

@@ -7,6 +7,9 @@
     <meta name="keywords" content="HTML, CSS, Youcode, tailwindCSS, Wikinamek,Wiki, Wikis">
     <meta name="author" content="Zaiid Moumnii">
     <meta name="description" content="CHRIHdaba">
+    {{-- search --}}
+    {{-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> --}}
+
     @vite('resources/css/app.css')
     <link rel="shortcut icon" href="{{asset('favicon.png')}}" type="image/x-icon">
     <title>@yield('title')</title>
@@ -16,8 +19,5 @@
     <link href="https://fonts.googleapis.com/css2?family=Salsa&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
 
-    {{-- tailwind --}}
-    {{-- <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script> --}}
 
 </head>
