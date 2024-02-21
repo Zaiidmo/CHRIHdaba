@@ -15,9 +15,17 @@
             </button>
         </div>
 
-        
+
         @auth
-            <ul class="flex items-center flex-shrink-0 space-x-6">
+            <ul class="flex align-middle items-center justify-center space-x-6">
+                <li class="relative z-50">
+                    <a href="/card" target="_blank" class="text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+                            <path fill="currentColor"
+                                d="M17 18a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2c0-1.11.89-2 2-2M1 2h3.27l.94 2H20a1 1 0 0 1 1 1c0 .17-.05.34-.12.5l-3.58 6.47c-.34.61-1 1.03-1.75 1.03H8.1l-.9 1.63l-.03.12a.25.25 0 0 0 .25.25H19v2H7a2 2 0 0 1-2-2c0-.35.09-.68.24-.96l1.36-2.45L3 4H1zm6 16a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2c0-1.11.89-2 2-2m9-7l2.78-5H6.14l2.36 5z" />
+                        </svg>
+                    </a>
+                </li>
                 <li class="relative z-50">
                     <button id="dropdownBgHoverButton" data-dropdown-toggle="dropdownBgHover" class="text-white">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 16 16">
@@ -32,30 +40,35 @@
                 <div id="dropdownBgHover" class="z-10 hidden w-fit p-4 bg-white rounded-lg shadow dark:bg-gray-700">
                     <ul class="py-2 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
                         <li class="profile-img flex justify-around gap-2">
-                            <img class="w-10 h-10" src="{{ asset('/storage/users/default.png')}}" alt="{{Auth::user()->name}}  profile">
+                            <img class="w-10 h-10" src="{{ asset('/storage/users/default.png') }}"
+                                alt="{{ Auth::user()->name }}  profile">
                             <div class="mb-2 border-b profile-body">
                                 <h5>{{ Auth::user()->name }}</h5>
                                 <h6>{{ Auth::user()->email }}</h6>
                             </div>
                         </li>
                         @if (Auth::user()->hasRole('admin'))
-                        <li>
-                          <a href="/admin" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</a>
-                        </li>
+                            <li>
+                                <a href="/admin"
+                                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</a>
+                            </li>
                         @endif
                         <li>
-                          <a href="admin/profile" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Profile</a>
+                            <a href="admin/profile"
+                                class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Profile</a>
                         </li>
-                      </ul>
-                      <div class="py-1">
-                        <a href="/logout" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign out</a>
-                      </div>
+                    </ul>
+                    <div class="py-1">
+                        <a href="/logout"
+                            class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign
+                            out</a>
+                    </div>
                 </div>
             @else
-            <button id="login-btn"
-                class=" py-1.5 px-3 m-1 text-center bg-gray-100  rounded-md text-black hover:bg-gray-100 lg:inline-block ">
-                Sign In
-            </button>
+                <button id="login-btn"
+                    class=" py-1.5 px-3 m-1 text-center bg-gray-100  rounded-md text-black hover:bg-gray-100 lg:inline-block ">
+                    Sign In
+                </button>
             @endauth
     </nav>
 
