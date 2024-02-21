@@ -27,13 +27,9 @@
                     </form>
                 </div>
                 <div class="px-4 py-3 text-lg text-gray-900">Free</div>
-                <div class="w-10 text-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" id="delete">
-                        <path
-                            d="M24.2,12.193,23.8,24.3a3.988,3.988,0,0,1-4,3.857H12.2a3.988,3.988,0,0,1-4-3.853L7.8,12.193a1,1,0,0,1,2-.066l.4,12.11a2,2,0,0,0,2,1.923h7.6a2,2,0,0,0,2-1.927l.4-12.106a1,1,0,0,1,2,.066Zm1.323-4.029a1,1,0,0,1-1,1H7.478a1,1,0,0,1,0-2h3.1a1.276,1.276,0,0,0,1.273-1.148,2.991,2.991,0,0,1,2.984-2.694h2.33a2.991,2.991,0,0,1,2.984,2.694,1.276,1.276,0,0,0,1.273,1.148h3.1A1,1,0,0,1,25.522,8.164Zm-11.936-1h4.828a3.3,3.3,0,0,1-.255-.944,1,1,0,0,0-.994-.9h-2.33a1,1,0,0,0-.994.9A3.3,3.3,0,0,1,13.586,7.164Zm1.007,15.151V13.8a1,1,0,0,0-2,0v8.519a1,1,0,0,0,2,0Zm4.814,0V13.8a1,1,0,0,0-2,0v8.519a1,1,0,0,0,2,0Z">
-                        </path>
-                    </svg>
-                </div>
+                <button id="deleteFromCart" data-product-id="{{ $cardProduct->id }}" class="mt-4 font-semibold text-red-400 text-sm">
+                    Remove
+                </button>
             </div>
             <?php $card->totalAmount += $cardProduct->price ?>
             @endforeach
@@ -62,6 +58,25 @@
 
                     </table>
                     <p class="mt-4">Discount Price</p>
+                    @auth
+                    <hr class="mt-2">
+                    <div class="flex justify-between my-2">
+                        <h1>Total Price</h1>
+                        <p>$110.13</p>
+                    </div>
+                    <button
+                        class="mt-auto text-white bg-gray-500 border-0 py-2 px-4 w-full focus:outline-none hover:bg-gray-500 rounded">
+                        <span class="flex gap-2 justify-center items-center">
+                            <svg width="23" height="22" viewBox="0 0 23 22" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M16.5 7.66667H6.5M16.5 7.66667C19.2614 7.66667 21.5 9.65651 21.5 12.1111V16.5556C21.5 19.0102 19.2614 21 16.5 21H6.5C3.73858 21 1.5 19.0102 1.5 16.5556V12.1111C1.5 9.65651 3.73858 7.66667 6.5 7.66667M16.5 7.66667V5.44444C16.5 2.98985 14.2614 1 11.5 1C8.73858 1 6.5 2.98985 6.5 5.44444V7.66667"
+                                    stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                            <span class="text-xl">Checkout</span>
+                        </span>
+                    </button>
+                    @else 
                     <div class="flex justify-center items-center gap-4 mt-2">
                         <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
                             <g fill="none">
@@ -89,8 +104,9 @@
                             </svg>
                             <span class="text-xl">Checkout</span>
                         </span>
-
                     </button>
+
+                    @endauth
                 </div>
             </div>
     </section>

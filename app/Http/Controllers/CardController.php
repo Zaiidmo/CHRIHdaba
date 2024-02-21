@@ -35,4 +35,18 @@ class CardController extends Controller
 
         return redirect()->back()->with('success', 'Product added to cart successfully');
     }
+    public function removeProductCart(Request $request)
+    {
+        $productId = $request->id;
+        $user = Auth::user();
+        $cart = $user->cart;
+    
+        if ($cart) {
+            $cart->products()->detach($productId);
+    
+            return response()->json(['success' => true, 'message' => 'Product removed from cart successfully']);
+        }
+    
+        return response()->json(['success' => false, 'message' => 'User does not have a cart']);
+    }
 }
