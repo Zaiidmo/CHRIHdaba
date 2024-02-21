@@ -23,13 +23,16 @@ use TCG\Voyager\Models\Category;
 Route::get('/', function () {
     $products = Product::latest()->take(2)->get();
     $newArrivals = Product::latest()->take(4)->get();
-    $popularCategories = Voyager::model('Category')->get();
+    $popularCategories = Voyager::model('Category')->take(4)->get();
     return view('welcome', compact('products', 'newArrivals', 'popularCategories'));
 });
 
 Route::resource('product', ProductController::class);
 
-Route::resource('card', OrderController::class);
+//Card Routes
+Route::resource('card', CardController::class);
+Route::Post('/addCart', [CardController::class,'addToCART'])->name('card.add');
+Route::delete('/deleteFromCard', [CardController::class, 'removeFromCart'])->name('card.remove');
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
@@ -38,6 +41,7 @@ Route::group(['prefix' => 'admin'], function () {
 Route::get('login', function () {
     return redirect()->route('voyager.login');
 })->name('login');
+
 
 // Login
 Route::post('signin', [AuthController::class, 'signin'])->name('signin');

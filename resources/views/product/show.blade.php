@@ -93,25 +93,7 @@
 		</div>
 	  </div>
             
-        <div class="flex flex-row gap-2 ml-12 py-5 px-24">
-            <div>
-                <div class="flex relative">
-					<img class="h-52" style="border-radius: 3rem;" alt="gallery" src="{{ asset('assets/images/main clothe.png') }}">
-                </div>
-            </div>
-
-            <div>
-                <div class="flex relative">
-					<img class="h-52" style="border-radius: 3rem;" alt="gallery" src="{{ asset('assets/images/main clothe.png') }}">
-                </div>
-            </div>
-
-            <div>
-                <div class="flex relative">
-					<img class="h-52" style="border-radius: 3rem;"alt="gallery" src="{{ asset('assets/images/main clothe.png') }}">
-                </div>
-            </div>
-        </div>
+        
     </div>
 
 <section class="">

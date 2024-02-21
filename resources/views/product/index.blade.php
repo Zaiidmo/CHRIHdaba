@@ -95,9 +95,15 @@
                                 <p class="mt-2">(4.1k) Customer Reviews</p>
                                 <div class="mt-2 flex items-center justify-between">
                                     <span class="text-3xl font-bold text-gray-900 dark:text-white">{{ $product->price }} $</span>
-                                    <a href="#"
-                                        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add
-                                        to cart</a>
+                                    <form action="{{ Route('card.add') }}" method="POST">
+                                        @csrf
+                                        @method('POST')
+                                        <input type="hidden" name="id" value="{{ $product->id }}">
+                                        <button type="submit"
+                                        class="text-white bg-blue-600 hover:bg-blue-800 rounded-full focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium text-sm px-5 py-2.5 text-center">Add
+                                        to cart
+                                    </form>
+                                    
                                 </div>
                             </div>
                         </div>

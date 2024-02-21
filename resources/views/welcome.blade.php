@@ -43,7 +43,7 @@
                 <div class="h-full lg:grid grid-cols-1 gap-6">
                     @foreach ($products as $product)
                         <div style="background-image: url({{ asset('storage/' . $product->image) }})"
-                            class="max-w-sm p-6 bg-white border border-gray-200 rounded-3xl shadow dark:bg-gray-800 dark:border-gray-700">
+                            class="bg-cover bg-center max-w-sm p-6 bg-white border border-gray-200 rounded-3xl shadow dark:bg-gray-800 dark:border-gray-700">
                             <svg class="w-7 h-7 text-gray-500 dark:text-gray-400 mb-3" aria-hidden="true"
                                 xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                                 <path
@@ -86,7 +86,7 @@
                                 {{ $category->name }}</h5>
                         </a>
                         <p class="mb-3 font-normal text-gray-700 ">{{ $category->description }}</p>
-                        <a href="Products"
+                        <a href="product"
                             class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-primary rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300">
                             Discover more
                             <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true"
@@ -295,4 +295,22 @@
         </div>
 
     </section>
+@endsection
+@section('scripts')
+<script>
+    document.getElementById('login-btn').addEventListener('click', function() {
+        document.getElementById('login-popup').classList.remove('hidden');
+    });
+    document.getElementById('login-popup-close').addEventListener('click', function() {
+        document.getElementById('login-popup').classList.add('hidden');
+    });
+</script>
+<script>
+document.getElementById('register-btn').addEventListener('click', function() {
+    document.getElementById('register-popup').classList.remove('hidden');
+});
+document.getElementById('register-popup-close').addEventListener('click', function() {
+    document.getElementById('register-popup').classList.add('hidden');
+});
+</script>
 @endsection
