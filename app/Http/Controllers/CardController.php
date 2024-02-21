@@ -11,18 +11,22 @@ class CardController extends Controller
 {
     public function index(Card $card)
     {
-        $user = Auth::user();
-        $card = $user->cart;
-        $suggest = Product::latest()->take(3)->get();
+        if (Auth::Check()) {
+            $user = Auth::user();
+            $card = $user->cart;
+            $suggest = Product::latest()->take(3)->get();
 
-        // Check if the user has a card
-        if ($user->cart) {
-            $cardProducts = $user->cart->products;
-            return view('card.index', compact('card','suggest', 'cardProducts'));
+            // Check if the user has a card
+            if ($user->cart) {
+                $cardProducts = $user->cart->products;
+                return view('card.index', compact('card', 'suggest', 'cardProducts'));
+            } else {
+                // If the user doesn't have a card, pass an empty array
+                $cardProducts = [];
+                return view('card.index', compact('card', 'suggest', 'cardProducts'));
+            }
         } else {
-            // If the user doesn't have a card, pass an empty array
-            $cardProducts = [];
-            return view('card.index', compact('card','suggest', 'cardProducts'));
+            return redirect('/');
         }
     }
     public function addToCART(Request $request)
