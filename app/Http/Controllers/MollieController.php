@@ -15,7 +15,7 @@ class MollieController extends Controller
                 'value' => $request->total_price . '.00', // You must send the correct number of decimals, thus we enforce the use of strings
             ],
             'description' => 'Order #' . $request->card_id,
-            'redirectUrl' => route('home'),
+            'redirectUrl' => route('order.index'),
             // 'webhookUrl' => route('webhooks.mollie'),
             'metadata' => [
                 'order_id' => $request->card_id,

@@ -45,6 +45,7 @@ Route::get('login', function () {
 
 // Order
 Route::post('/prepare-payment', [MollieController::class, 'preparePayment'])->name('prepare.payment');
+Route::get('/order', [OrderController::class, 'index']);
 
 
 // Login
