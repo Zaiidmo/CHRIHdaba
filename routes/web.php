@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\CardController;
+use App\Http\Controllers\MollieController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 use App\Models\Product;
@@ -25,7 +26,7 @@ Route::get('/', function () {
     $newArrivals = Product::latest()->take(4)->get();
     $popularCategories = Voyager::model('Category')->take(4)->get();
     return view('welcome', compact('products', 'newArrivals', 'popularCategories'));
-});
+})->name('home');
 
 Route::resource('product', ProductController::class);
 
@@ -41,6 +42,9 @@ Route::group(['prefix' => 'admin'], function () {
 Route::get('login', function () {
     return redirect()->route('voyager.login');
 })->name('login');
+
+// Order
+Route::post('/prepare-payment', [MollieController::class, 'preparePayment'])->name('prepare.payment');
 
 
 // Login
