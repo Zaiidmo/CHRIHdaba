@@ -39,6 +39,9 @@ Route::get('login', function () {
     return redirect()->route('voyager.login');
 })->name('login');
 
+//Card 
+Route::Post('/addCart', [OrderController::class,'addToCard'])->name('card.add');
+
 // Login
 Route::post('signin', [AuthController::class, 'signin'])->name('signin');
 // Register
