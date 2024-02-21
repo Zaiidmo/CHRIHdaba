@@ -48,4 +48,12 @@ class User extends \TCG\Voyager\Models\User
         $role = Role::where('name', $roleName)->firstOrFail();
         $this->roles()->syncWithoutDetaching($role);
     }
+    public function orders()
+    {
+        return $this->hasMany(Order::class);
+    }
+    public function card()
+    {
+        return $this->hasOne(Card::class);
+    }
 }

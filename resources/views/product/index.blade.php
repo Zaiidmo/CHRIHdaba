@@ -88,7 +88,7 @@
                                 <p class="mt-2">(4.1k) Customer Reviews</p>
                                 <div class="mt-2 flex items-center justify-between">
                                     <span class="text-3xl font-bold text-gray-900 dark:text-white">{{ $product->price }} $</span>
-                                    <form action="{{ Route('cart.add') }}" method="POST">
+                                    <form action="{{ Route('card.add') }}" method="POST">
                                         @csrf
                                         @method('POST')
                                         <input type="hidden" name="id" value="{{ $product->id }}">

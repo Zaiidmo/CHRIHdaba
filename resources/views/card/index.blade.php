@@ -4,18 +4,18 @@
 
 @section('content')
     <section class="flex text-gray-600 body-font pt-24 px-64">
-        <div class="flex flex-col">
-
-            <div class="flex gap-8 items-center mr-16">
+        <div class="flex flex-col gap-4">
+            {{$card->totalAmount}}
+            @foreach ($cardProducts as $cardProduct)
+            <div class="flex gap-4 items-center mr-16">
                 <div
                     class="flex flex-col items-center bg-white md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
                     <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg"
-                        src="{{ asset('assets/images/product.png') }}" alt="">
+                    src="{{ asset('storage/' . $cardProduct->image)}}" alt="Product Image">
                     <div class="flex flex-col justify-between p-4 leading-normal">
-                        <h5 class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology
+                        <h5 class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">{{ $cardProduct->name }}
                         </h5>
-                        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise
-                            technology acquisitions of 2021.</p>
+                        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{ $cardProduct->description }}</p>
                     </div>
                 </div>
 
@@ -35,69 +35,8 @@
                     </svg>
                 </div>
             </div>
-
-            <div class="flex gap-8 items-center mr-16">
-                <div
-                    class="flex flex-col items-center bg-white md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
-                    <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg"
-                        src="{{ asset('assets/images/product.png') }}" alt="">
-                    <div class="flex flex-col justify-between p-4 leading-normal">
-                        <h5 class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy
-                            technology
-                        </h5>
-                        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise
-                            technology acquisitions of 2021.</p>
-                    </div>
-                </div>
-
-                <div class="px-4 py-3">5 Mb/s</div>
-                <div class="">
-                    <form action="">
-                        <input class="h-6 w-12" type="number" id="tentacles" name="tentacles" min="0"
-                            max="100" />
-                    </form>
-                </div>
-                <div class="px-4 py-3 text-lg text-gray-900">Free</div>
-                <div class="w-10 text-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" id="delete">
-                        <path
-                            d="M24.2,12.193,23.8,24.3a3.988,3.988,0,0,1-4,3.857H12.2a3.988,3.988,0,0,1-4-3.853L7.8,12.193a1,1,0,0,1,2-.066l.4,12.11a2,2,0,0,0,2,1.923h7.6a2,2,0,0,0,2-1.927l.4-12.106a1,1,0,0,1,2,.066Zm1.323-4.029a1,1,0,0,1-1,1H7.478a1,1,0,0,1,0-2h3.1a1.276,1.276,0,0,0,1.273-1.148,2.991,2.991,0,0,1,2.984-2.694h2.33a2.991,2.991,0,0,1,2.984,2.694,1.276,1.276,0,0,0,1.273,1.148h3.1A1,1,0,0,1,25.522,8.164Zm-11.936-1h4.828a3.3,3.3,0,0,1-.255-.944,1,1,0,0,0-.994-.9h-2.33a1,1,0,0,0-.994.9A3.3,3.3,0,0,1,13.586,7.164Zm1.007,15.151V13.8a1,1,0,0,0-2,0v8.519a1,1,0,0,0,2,0Zm4.814,0V13.8a1,1,0,0,0-2,0v8.519a1,1,0,0,0,2,0Z">
-                        </path>
-                    </svg>
-                </div>
-            </div>
-
-            <div class="flex gap-8 items-center mr-16">
-                <div
-                    class="flex flex-col items-center bg-white md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
-                    <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg"
-                        src="{{ asset('assets/images/product.png') }}" alt="">
-                    <div class="flex flex-col justify-between p-4 leading-normal">
-                        <h5 class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy
-                            technology
-                        </h5>
-                        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise
-                            technology acquisitions of 2021.</p>
-                    </div>
-                </div>
-
-                <div class="px-4 py-3">5 Mb/s</div>
-                <div class="">
-                    <form action="">
-                        <input class="h-6 w-12" type="number" id="tentacles" name="tentacles" min="0"
-                            max="100" />
-                    </form>
-                </div>
-                <div class="px-4 py-3 text-lg text-gray-900">Free</div>
-                <div class="w-10 text-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" id="delete">
-                        <path
-                            d="M24.2,12.193,23.8,24.3a3.988,3.988,0,0,1-4,3.857H12.2a3.988,3.988,0,0,1-4-3.853L7.8,12.193a1,1,0,0,1,2-.066l.4,12.11a2,2,0,0,0,2,1.923h7.6a2,2,0,0,0,2-1.927l.4-12.106a1,1,0,0,1,2,.066Zm1.323-4.029a1,1,0,0,1-1,1H7.478a1,1,0,0,1,0-2h3.1a1.276,1.276,0,0,0,1.273-1.148,2.991,2.991,0,0,1,2.984-2.694h2.33a2.991,2.991,0,0,1,2.984,2.694,1.276,1.276,0,0,0,1.273,1.148h3.1A1,1,0,0,1,25.522,8.164Zm-11.936-1h4.828a3.3,3.3,0,0,1-.255-.944,1,1,0,0,0-.994-.9h-2.33a1,1,0,0,0-.994.9A3.3,3.3,0,0,1,13.586,7.164Zm1.007,15.151V13.8a1,1,0,0,0-2,0v8.519a1,1,0,0,0,2,0Zm4.814,0V13.8a1,1,0,0,0-2,0v8.519a1,1,0,0,0,2,0Z">
-                        </path>
-                    </svg>
-                </div>
-            </div>
-
+            <?php $card->totalAmount += $cardProduct->price ?>
+            @endforeach
         </div>
         <div class="flex flex-wrap -m-4">
             <div class="p-4 xl:w-3/4 md:w-1/2 w-full">
@@ -107,7 +46,7 @@
                     <table class="mt-4">
                         <tr>
                             <td>Price</td>
-                            <td>$99.23</td>
+                            <td>{{ $card->totalAmount }} $</td>
                         </tr>
                         <tr>
                             <td>Shipping</td>
@@ -172,14 +111,14 @@
                             <div class="flex-grow bg-gray-200 p-4 h-48 rounded-lg">
                                 <h2 class="title-font my-2 font-medium text-lg text-gray-900">{{ $suggest->name }}</h2>
                                 <p class="text-gray-500 mb-8"><span class="mr-2">{{ $suggest->price }} $</p>
-                                <button
-                                    class="group relative h-12 w-64 overflow-hidden rounded-lg bg-white text-lg shadow">
-                                    <div
-                                        class="absolute inset-0 w-3 bg-primary transition-all duration-[250ms] ease-out group-hover:w-full">
-                                    </div>
-                                    <span class="relative text-black group-hover:text-white"><span
-                                            class="text-gray-400 mr-2">Add to card</span>
-                                </button>
+                                <form action="{{ Route('card.add') }}" method="POST">
+                                    @csrf
+                                    @method('POST')
+                                    <input type="hidden" name="id" value="{{ $suggest->id }}">
+                                    <button type="submit"
+                                    class="text-white bg-blue-600 hover:bg-blue-800 rounded-full focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium text-sm px-5 py-2.5 text-center">Add
+                                    to cart
+                                </form>
                             </div>
                         </div>
                     </div>

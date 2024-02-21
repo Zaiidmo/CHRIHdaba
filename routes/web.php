@@ -29,7 +29,9 @@ Route::get('/', function () {
 
 Route::resource('product', ProductController::class);
 
+//Card Routes
 Route::resource('card', CardController::class);
+Route::Post('/addCart', [CardController::class,'addToCART'])->name('card.add');
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
@@ -39,8 +41,6 @@ Route::get('login', function () {
     return redirect()->route('voyager.login');
 })->name('login');
 
-//Card 
-// Route::Post('/addCart', [OrderController::class,'addToCart'])->name('cart.add');
 
 // Login
 Route::post('signin', [AuthController::class, 'signin'])->name('signin');
