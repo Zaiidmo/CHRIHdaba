@@ -189,7 +189,7 @@
         $(document).on('click', '#deleteFromCart', function(e) {
             e.preventDefault(); // Prevent the default form submission behavior
 
-            var productId = $(this).data('product-id'); // Assuming you set a data-product-id attribute
+            var productId = $(this).data('product-id'); 
 
             // Make AJAX request to remove product from cart
             $.ajax({

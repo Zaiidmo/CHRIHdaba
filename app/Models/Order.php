@@ -8,12 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Order extends Model
 {
     use HasFactory;
-    protected $fillable = ['user_id','totalAmount', 'status'];
+    protected $fillable = ['user_id','totalAmount', 'card_id', 'status'];
     public function user()
     {
         return $this->belongsTo(User::class);
     }
-    public function card()
+    public function cart()
     {
         return $this->belongsTo(Card::class);
     }

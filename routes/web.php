@@ -38,14 +38,16 @@ Route::delete('/deleteFromCard', [CardController::class, 'removeFromCart'])->nam
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
-
+Route::middleware("auth")->group(function(){
+    // Order
+    Route::get('/order', [OrderController::class, 'index'])->name('order.index');
+    Route::post('/prepare-payment', [OrderController::class, 'preparePayment'])->name('prepare.payment');
+    Route::get('/success', [OrderController::class, 'success'])->name('success');
+    Route::get('/cancel', [OrderController::class, 'cancel'])->name('cancel');
+});
 Route::get('login', function () {
     return redirect()->route('voyager.login');
 })->name('login');
-
-// Order
-Route::post('/prepare-payment', [MollieController::class, 'preparePayment'])->name('prepare.payment');
-Route::get('/order', [OrderController::class, 'index']);
 
 
 // Login
