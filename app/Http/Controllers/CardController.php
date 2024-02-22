@@ -31,17 +31,22 @@ class CardController extends Controller
     }
     public function addToCART(Request $request)
     {
-        $user = Auth::user();
-        $product = Product::findOrFail($request->id);
-        $card = $user->cart;
-        // dd($card);
-        if ($card === null) {
-            $card = Card::create(['user_id' => $user->id]);
-        }
-        $card->products()->attach($product->id);
+        if (Auth::Check()) {
+            $user = Auth::user();
+            $product = Product::findOrFail($request->id);
+            $card = $user->cart;
+            // dd($card);
+            if ($card === null) {
+                $card = Card::create(['user_id' => $user->id]);
+            }
+            $card->products()->attach($product->id);
 
-        return redirect()->back()->with('success', 'Product added to cart successfully');
+            return redirect()->back()->with('success', 'Product added to cart successfully');
+        } else {
+            return redirect('/');
+        }
     }
+    
     public function removeFromCart(Request $request)
     {
         $productId = $request->id;

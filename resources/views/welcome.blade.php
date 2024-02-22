@@ -210,7 +210,7 @@
                         </div>
                         <div class="mt-6 text-center text-sm text-slate-600">
                             New Customer ?
-                            <button id="register-btn" class="font-medium text-[#4285f4]">Sign up</button>
+                            <button id="register" class="font-medium text-[#4285f4]">Sign up</button>
                         </div>
                     </div>
                 </div>
@@ -313,4 +313,11 @@ document.getElementById('register-popup-close').addEventListener('click', functi
     document.getElementById('register-popup').classList.add('hidden');
 });
 </script>
+<script>
+    document.getElementById('register').addEventListener('click', function(){
+        document.getElementById('register-popup').classList.remove('hidden');
+        document.getElementById('login-popup').classList.add('hidden');
+    })
+</script>
+
 @endsection
