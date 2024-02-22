@@ -63,5 +63,5 @@ Route::any('logout', [AuthController::class, 'getout'])->name('logout');
 Route::get('/search-by-category', [ProductController::class, 'searchByCategory']);
 
 // mollie function 
-Route::get('mollie-paymnet',[MollieController::Class,'preparePayment'])->name('mollie.payment');
-Route::get('payment-success',[MollieController::Class, 'paymentSuccess'])->name('payment.success');
+// Route::get('mollie-paymnet',[MollieController::Class,'preparePayment'])->name('mollie.payment');
+// Route::get('payment-success',[MollieController::Class, 'paymentSuccess'])->name('payment.success');
