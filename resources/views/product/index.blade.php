@@ -17,7 +17,7 @@
                         <h2 class="mb-12 text-5xl font-salsa font-semibold text-gray-900">Dive into a World of Wonders with CHRIHdaba's Spectacular Selections!</h2>
                     </div>
 
-                    <div method="" id="search_bar" class="mb-8 flex flex-col">
+                    <div method="" id="search_bar" class="relative mb-8 flex flex-col">
                         <div id="category-tabs" class="flex justify-center mb-4">
                             <button type="submit" class="mr-4 category-tab w-40 bg-gradient-to-r from-blue-500 to-red-500 text-white px-4 py-2 text-xl rounded font-medium focus:ring ring-black ring-opacity-10 gradient element-to-rotate" data-category="all">All</button>
 

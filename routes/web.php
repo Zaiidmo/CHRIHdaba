@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\CardController;
+use App\Http\Controllers\MolieController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 use App\Models\Product;
@@ -51,7 +52,10 @@ Route::post('/signup', [AuthController::class, 'signup'])->name('registration');
 Route::any('logout', [AuthController::class, 'getout'])->name('logout');
 
 // search
-Route::get('/search', [ProductController::class, 'search']);
-// using category
+// Route::get('/search', [ProductController::class, 'search']);
+// search using category name and product name
 Route::get('/search-by-category', [ProductController::class, 'searchByCategory']);
 
+// mollie function 
+Route::get('mollie-paymnet',[MollieController::Class,'preparePayment'])->name('mollie.payment');
+Route::get('payment-success',[MollieController::Class, 'paymentSuccess'])->name('payment.success');
