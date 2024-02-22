@@ -16,16 +16,32 @@
                     <div class="relative max-w-screen-lg text-center mx-auto">
                         <h2 class="mb-12 text-5xl font-salsa font-semibold text-gray-900">Dive into a World of Wonders with CHRIHdaba's Spectacular Selections!</h2>
                     </div>
+                    {{-- <ul class="flex flex-col gap-2 max-w-[280px] mx-auto mt-24">
+
+                        <li>
+                                    <ul class="flex flex-col gap-4 pl-2 mt-4">
+                                        @foreach ($categories as $category)
+                                       <li>
+                                        <button type="submit" class="category-tab flex flex-wrap w-40 border-l border-t border-b text-base font-medium rounded-l-md text-black bg-white hover:bg-gray-100 px-4 py-2" data-category="{{ $category->id }}">{{ $category->name }}</button>
+                                       </li>
+                                        @endforeach
+                                    </ul>
+                                </li>
+
+                                </ul> --}}
+
 
                     <div method="" id="search_bar" class="relative mb-8 flex flex-col">
-                        <div id="category-tabs" class="flex justify-center mb-4">
-                            <button type="submit" class="mr-4 category-tab w-40 bg-gradient-to-r from-blue-500 to-red-500 text-white px-4 py-2 text-xl rounded font-medium focus:ring ring-black ring-opacity-10 gradient element-to-rotate" data-category="all">All</button>
+                        {{-- <div id="category-tabs" class="flex justify-center mb-4">
+                            <button type="submit" class="mr-4 category-tab w-40 border-l border-t border-b text-base font-medium rounded-l-md text-black bg-white hover:bg-gray-100 px-4 py-2" data-category="all">All</button>
 
                             @foreach ($categories as $category)
-                            <button type="submit" class="mr-4 category-tab w-40 bg-gradient-to-r from-blue-500 to-red-500 text-white px-4 py-2 text-xl rounded font-medium focus:ring ring-black ring-opacity-10 gradient element-to-rotate" data-category="{{ $category->id }}">{{ $category->name }}</button>
+                            <button type="submit" class="category-tab flex flex-wrap w-40 border-l border-t border-b text-base font-medium rounded-l-md text-black bg-white hover:bg-gray-100 px-4 py-2" data-category="{{ $category->id }}">{{ $category->name }}</button>
+                            
                             @endforeach
 
-                        </div>
+                        </div> --}}
+                        
 
                         <label class="mx-auto mt-8 relative bg-white min-w-sm max-w-2xl flex flex-col md:flex-row items-center justify-center border py-2 px-2 rounded-2xl gap-2 shadow-2xl focus-within:border-gray-300"
                             for="search-bar">
@@ -40,6 +56,53 @@
                                 </div>
                             </button>
                         </label>
+                        <div class="w-30">
+                            <ul class="mx-auto mt-10 ">
+                                <li>
+                                    <details class="group">
+                    
+                                        <summary
+                                            class="flex items-center gap-2 p-2 font-medium marker:content-none hover:cursor-pointer">
+                    
+                                            <span class="flex gap-2">
+                    
+                                                <img class="w-6 h-6 rounded-lg"
+                                                    src="https://lh3.googleusercontent.com/a/AGNmyxbSlMgTRzE3_SMIxpDAhpNad-_CN5_tmph1NQ1KhA=s96-c"
+                                                    alt="">
+                    
+                                                <span>
+                                                    Here are our Categories
+                                                </span>
+                                            </span>
+                                            <svg class="w-5 h-5 text-gray-500 transition group-open:rotate-90" xmlns="http://www.w3.org/2000/svg"
+                                                width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                                <path fill-rule="evenodd"
+                                                    d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z">
+                                                </path>
+                                            </svg>
+                                        </summary>
+                    
+                                        <article class="px-4 pb-4">
+                    
+                                            <ul class=" pl-2 mt-4">
+                    
+                                                <li id="category-tabs" class="flex gap-4">
+                                                    <button type="submit" class="mr-4 category-tab w-40 border-l border-t border-b text-base font-medium rounded-l-md text-black bg-white hover:bg-gray-100 px-4 py-2" data-category="all">All</button>
+                                                    @foreach ($categories as $category)
+                    
+                                                    <button type="submit" class="category-tab flex flex-wrap w-40 border-l border-t border-b text-base font-medium rounded-l-md text-black bg-white hover:bg-gray-100 px-4 py-2" data-category="{{ $category->id }}">
+                                                        <span class="short-text">{{ $category->name }}</span>
+                                                        <span class="full-text" style="display: none;">{{ $category->name }}</span>
+                                                    </button>
+                                                    @endforeach
+                                                </li>
+                                            </ul>
+                                        </article>
+                                    </details>
+                                </li>
+                    
+                            </ul>
+                        </div>
                     </div>
                     
                     <div id="place" class="flex flex-wrap justify-center items-center">

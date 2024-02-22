@@ -76,18 +76,24 @@
 				<div class="absolute inset-0 w-3 bg-primary transition-all duration-[250ms] ease-out group-hover:w-full"></div>
 				<span class="relative text-black group-hover:text-white">Shop now</span>
 			</button>
-			<button class="group relative h-12 w-64 overflow-hidden rounded-lg bg-white text-lg shadow">
-				<div class="absolute inset-0 w-3 bg-gray-200 transition-all duration-[250ms] ease-out group-hover:w-full"></div>
-				<div class="flex gap-4 px-4">
-					<svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path d="M9.75 6.5L9.75 7.5C9.75 9.15685 11.0931 10.5 12.75 10.5C14.4069 10.5 15.75 9.15685 15.75 7.5V6.5" stroke="#434343" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-						<path d="M21.4165 13.5L20.3069 6.8424C19.9855 4.91365 18.3167 3.5 16.3613 3.5H9.13836C7.183 3.5 5.51424 4.91365 5.19278 6.8424L3.52612 16.8424C3.11976 19.2805 4.99994 21.5 7.47169 21.5H13.7499" stroke="#434343" stroke-linecap="round" stroke-linejoin="round"/>
-						<path d="M19.75 15.5L19.75 21.5" stroke="#434343" stroke-linecap="round" stroke-linejoin="round"/>
-						<path d="M22.75 18.5L16.75 18.5" stroke="#434343" stroke-linecap="round" stroke-linejoin="round"/>
-					</svg>
-					<span class="relative text-black group-hover:text-white">Add to basket</span>
-				</div>
-			</button>
+			
+			<form action="{{ Route('card.add') }}" method="POST">
+				@csrf
+				@method('POST')
+				<input type="hidden" name="id" value="{{ $product->id }}">
+			
+				<button type="submit" class="group relative h-12 w-64 overflow-hidden rounded-lg bg-white text-lg shadow">
+					<div class="absolute inset-0 w-3 bg-gray-200 transition-all duration-[250ms] ease-out group-hover:w-full"></div>
+					<div class="flex gap-4 px-4">
+						<svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M9.75 6.5L9.75 7.5C9.75 9.15685 11.0931 10.5 12.75 10.5C14.4069 10.5 15.75 9.15685 15.75 7.5V6.5" stroke="#434343" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+							<path d="M21.4165 13.5L20.3069 6.8424C19.9855 4.91365 18.3167 3.5 16.3613 3.5H9.13836C7.183 3.5 5.51424 4.91365 5.19278 6.8424L3.52612 16.8424C3.11976 19.2805 4.99994 21.5 7.47169 21.5H13.7499" stroke="#434343" stroke-linecap="round" stroke-linejoin="round"/>
+							<path d="M19.75 15.5L19.75 21.5" stroke="#434343" stroke-linecap="round" stroke-linejoin="round"/>
+							<path d="M22.75 18.5L16.75 18.5" stroke="#434343" stroke-linecap="round" stroke-linejoin="round"/>
+						</svg>
+						<span class="relative text-black group-hover:text-white">Add to basket</span>
+					</div>
+				</button>
 		  </div>
 
 		</div>
